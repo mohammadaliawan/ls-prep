@@ -39,13 +39,13 @@ Integers are numbers without decimal points. Floats or Floating-point numbers ar
 
 ### Arithematic Operators
 
-`=` Assignment operator
-`+` Addition
-`-` Subtration
-`*` Multiplicaton
-`/` Division
-`**` Exponentiation
-`%` Modulo
+- `=` Assignment operator
+- `+` Addition
+- `-` Subtration
+- `*` Multiplicaton
+- `/` Division
+- `**` Exponentiation
+- `%` Modulo
 
 `puts 9 / 2` When you do arithmatic with integers, you will get intger answers
 
