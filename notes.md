@@ -44,9 +44,50 @@ Integers are numbers without decimal points. Floats or Floating-point numbers ar
 - `-` Subtration
 - `*` Multiplicaton
 - `/` Division
-- `**` Exponentiation
+- `**`Exponentiation
 - `%` Modulo
 
 `puts 9 / 2` When you do arithmatic with integers, you will get intger answers
 
-### 
+## Strings
+
+We refer to groups of letters in a program as strings.
+Strings can have punctuation, digits, symbols, and spaces in them...more than just letters. That last string doesn’t have anything in it at all; we call that an empty string.
+
+### String Arithematic
+
+Just as you can do arithmetic on numbers, you can also do arithmetic on strings! Well, sort of...you can add strings, anyway.
+
+- Addition: "Contentanation of Strings"
+
+    `puts 'I like' + 'apple pie.'`
+
+    Outcome: `I likeapple pie.`
+
+- Multiplication: 
+
+    `puts 'blink ' * 4`
+
+    Output: `blink blink blink blink`
+
+#### 12 vs '12'
+
+`12` is a number.
+while `"12"` is a string of two digits
+
+**You can’t really add a number to a string or multiply a string by another string**
+
+You can write 'pig'*5 in a program, since it just means five sets of the string 'pig' all added together. However, you can’t write 5*'pig' , since that means 'pig' sets of the number 5, which is...poetic, at best.
+
+**Use the escape character `\` to escape apostrophes and backslashes.**
+If you have a backslash and another character, they are sometimes translated into a new character. The only things the backslash escapes, though, are
+the apostrophe and the backslash itself.
+
+
+
+
+
+
+
+
+
