@@ -31,6 +31,19 @@ Probably the first, most basic rule of good programming is to avoid duplication 
 A good programmer cultivates the virtue of laziness.Save yourself work whenever possible. Make your program a place where you can do the absolute minimum amount of work to get the job done. Not only is programming this way much more interesting (it’s very boring to do the same thing over and over and over...), but it produces less buggy code, and it produces it faster. It’s a win-win-win situation.
 Make your programs flexible. When change comes (and it always does), you’ll have a much easier time changing with it.
 
+## Data Types in Ruby:
+
+Three Data Types in Ruby that we are interested in now:
+
+**numbers, strings and booleans (true or false)**
+
+**REMEMBER: Ruby is Case Sensitive**
+
+## `puts` and `print` commands
+
+`puts` and `print` both simply print what ever you give them to the screen. but `puts` is a bit different because it also adds a new blank line after the thing you want it to print.
+
+
 ## Numbers
 
 ### Integers and Floats
@@ -82,6 +95,34 @@ You can write 'pig'*5 in a program, since it just means five sets of the string 
 **Use the escape character `\` to escape apostrophes and backslashes.**
 If you have a backslash and another character, they are sometimes translated into a new character. The only things the backslash escapes, though, are
 the apostrophe and the backslash itself.
+
+## Variables
+
+Variables are used for storing data. Its like giving a name to that piece of data so you can use it again and again just refering to it by its name. Programmers refer to this process of naming __assignment__ and they call these names variables.
+
+A variable name can be any sequence of numbers and letters, but in ruby **the first character of this name needs to be a lowercase letter**
+
+the variable name basically **points** to what it is being assigned. Just as we can __assign__ an object to a variable, we can __reassign__ a different object for that variable to point to.
+
+Variable can point to any kind of object i.e numbers, strings, or booleans.
+
+**VERY IMPORTATN: Infact, they can point to almost anything except other variables.**
+
+```
+var1 = 8
+var2 = var1
+
+puts var1 #=> 8
+puts var2 #=> 8
+puts ''   #=>
+
+var1 = 'eight'
+puts var1   #=> eight
+puts var2   #=> 8
+```
+In the above example: var1 points to the value 8. when we assign `var2 = var1` we are actually asking ruby to point `var2` to the same value as `var1` i.e. 8.  
+
+**However, if you _change_ or _mutate_ the value at the location where it is stored i.e. in the storage using the e.g `.capitalize!` method!, then since the var2 is also pointing to the same location as var1. the value of `var2` also changes.**
 
 
 
