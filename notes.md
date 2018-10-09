@@ -43,6 +43,9 @@ Three Data Types in Ruby that we are interested in now:
 
 `puts` and `print` both simply print what ever you give them to the screen. but `puts` is a bit different because it also adds a new blank line after the thing you want it to print.
 
+**IMPORTANT!**
+Before `puts` tries to write out an object, it uses `to_s` to get the string version of that object.
+In fact, the `s` in `puts` stands for string; `puts` really means `put string`.
 
 ## Numbers
 
@@ -123,6 +126,15 @@ puts var2   #=> 8
 In the above example: var1 points to the value 8. when we assign `var2 = var1` we are actually asking ruby to point `var2` to the same value as `var1` i.e. 8.  
 
 **However, if you _change_ or _mutate_ the value at the location where it is stored i.e. in the storage using the e.g `.capitalize!` method!, then since the var2 is also pointing to the same location as var1. the value of `var2` also changes.**
+
+## Methods
+
+>**Methods are things that do stuff** Chris Pine
+
+>**Objects(strings,integers and floats) are the nouns of the Ruby Language, then methods are like the verbs.**
+And, just like in English, you can’t have a verb without a noun to do the verb.
+
+
 
 
 
