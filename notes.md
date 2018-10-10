@@ -63,7 +63,7 @@ Integers are numbers without decimal points. Floats or Floating-point numbers ar
 - `**`Exponentiation
 - `%` Modulo
 
-`puts 9 / 2` When you do arithmatic with integers, you will get intger answers
+`puts 9 / 2` When you do arithmatic with integers, you will get integer answers
 
 ## Strings
 
@@ -107,7 +107,7 @@ A variable name can be any sequence of numbers and letters, but in ruby **the fi
 
 the variable name basically **points** to what it is being assigned. Just as we can __assign__ an object to a variable, we can __reassign__ a different object for that variable to point to.
 
-Variable can point to any kind of object i.e numbers, strings, or booleans.
+Variable can point to almost any kind of object i.e numbers, strings, or booleans.
 
 **VERY IMPORTATN: Infact, they can point to almost anything except other variables.**
 
@@ -129,18 +129,18 @@ In the above example: var1 points to the value 8. when we assign `var2 = var1` w
 
 ## Methods
 
+**From Code-Academy:**
+
+>Everything in Ruby is an object. So everything in Ruby has certain built-in abilities called methods. "Skills" that certain objects have.
+
 >**Methods are things that do stuff** Chris Pine
 
 >**Objects(strings,integers and floats) are the nouns of the Ruby Language, then methods are like the verbs.**
-And, just like in English, you can’t have a verb without a noun to do the verb.
+And, just like in English, you can’t have a verb without a noun to do the verb. Just as every verb needs a noun, in Ruby every mehtod needs an object.
 
+It’s usually easy to tell which object is performing the method.It’s what comes right before the dot, like in our `clock.tick` example or in `101.to_s` . Sometimes, though, it’s not quite as obvious, as with the arithmetic methods. As it turns out, `5 + 5` is really just a shortcut way of writing `5.+ 5` .
 
-
-
-
-
-
-
+The important thing to get from all this is that every method is being done by some object, even if it doesn’t have a dot in front of it.
 
 
 

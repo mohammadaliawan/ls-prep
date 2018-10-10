@@ -45,8 +45,16 @@
 
 ####################################################
 
-var1 = "2"
-var2 = 4
+# var1 = "2"
+# var2 = 4
 
-puts var2.to_s + var1 #=> 42
-puts var1.to_i + var2
+# puts var2.to_s + var1 #=> 42
+# puts var1.to_i + var2 #=> 6
+
+srand 1976
+puts rand(100)
+puts rand(150)
+puts rand(50)
+puts rand(20)
+
+puts rand(35)
