@@ -1,4 +1,71 @@
-# Learning to Program-Chris Pine
+# Learning to Program-Chris Pine/Intro-to-Programming-LS/Codeacademy-ruby Track
+
+**--------- LaunchSchool-Introduction to Programming------------**
+
+## Reading Documentation
+
+### Class name or Module name
+
+At the Top you will see the **Class** or **Module** name.
+In some documentation, you'll see the class name being referred to with a `::` symbol, like this: `Encoding::Converter`. Here, the `::` symbol is used to define a namespace, which is just a way to group classes in Ruby and differentiate from other classes with the same name. For example `ActiveRecord::Base` is referring to the Base class in the ActiveRecord module, to differentiate from other classes also named Base.
+whether the top heading says String or Encoding::Converter, it's referring to the class or module name and the rest of the page will be documenting that class or module.
+
+### Methods
+
+When looking at the method list on the side bar, the :: means something different: it means that the method after the :: is a class method.
+As a documentation convention, methods are listed out with either a `::` or a `#` to indicate two different kinds of publicly accessible methods. Methods denoted by `::` are considered class methods, while methods denoted by # are considered instance methods.
+
+`::` class methods
+`#`  Instance methods
+
+Beyond documentation, don't get caught up with these symbols because they have completely different meanings when executed in Ruby code. For example, the :: symbol is used as a namespace in actual Ruby code, while the # is used as a comment. Their use here in Ruby documentation is completely different from their use in actual code.
+
+Ruby-doc
+
+`Class Name`
+
+`Public Class Methods`
+  -
+  -
+  -
+  -
+`Public Instance Methods`
+  -
+  -
+  -
+  -
+
+### Instance Methods vs Class Methods
+
+> Public Instance Methods can be applied to any instance of the class 
+
+For Example the '#split' method for strings, which means that split is an instance method, and we can call that method on any string directly. e.g
+
+"world wide web".split
+
+>Public Class Methods are called directly from the class.
+
+::new
+::try_convert
+ b = String.new("blue")
+ c = String.try_convert(2)
+
+### Parent
+
+> In Ruby every class sub-classes from some "parent".
+
+The class you're looking at also has access to methods - both instance and class - documented in the parent class.
+
+### Class/Module Index
+
+All classes are part of a namespace in Ruby and this menu is a list of all the other classes and modules that are part of the same namespace as the current class.
+
+### Included Modules
+
+Included modules indicate additional modules whose functionality is available to the String class. In the String example, the Comparable module is included.
+
+
+**-------------Chris-Pine/Code Academy-------------------------**
 
 ## What is Programming?
 Programming is telling your computer how to do something. Large tasks must be broken up into smaller tasks, which must be broken up into still smaller tasks, down until you get to the most basic tasks that
@@ -39,13 +106,6 @@ Three Data Types in Ruby that we are interested in now:
 
 **REMEMBER: Ruby is Case Sensitive**
 
-## `puts` and `print` commands
-
-`puts` and `print` both simply print what ever you give them to the screen. but `puts` is a bit different because it also adds a new blank line after the thing you want it to print.
-
-**IMPORTANT!**
-Before `puts` tries to write out an object, it uses `to_s` to get the string version of that object.
-In fact, the `s` in `puts` stands for string; `puts` really means `put string`.
 
 ## Numbers
 
@@ -70,9 +130,51 @@ Integers are numbers without decimal points. Floats or Floating-point numbers ar
 We refer to groups of letters in a program as strings.
 Strings can have punctuation, digits, symbols, and spaces in them...more than just letters. That last string doesn’t have anything in it at all; we call that an empty string.
 
+##### Syntax
+
+` "this is a string"`
+` 'this is also a #string'`
+` 'I\'m a string too'`
+
+## Variables Assignment
+
+Variable assignment is simply done with the `=` .
+reassignment is also doen with this assignment operator.
+
+Other Assignment operators
+
+counter = counter + 1
+
+counter `+=` 1
+counter `-=` 1
+counter `*=` 2
+counter `/=` 3
+
+You're telling Ruby: "Add/Subtract/multiply/divide 1 to/by counter, then assign that new value back to counter.
+
+##### Syntax
+```
+
+var1 = "bye "
+var2 = 4
+var3 = true
+var4 = false
+var5 = nil
+
+puts var1 #=> bye 
+puts var2 #=> 4
+puts var3 #=> true
+puts var4 #=> false
+puts var5 #=> (nothing-blank line)
+
+```
+
+
 ### String Arithematic
 
 Just as you can do arithmetic on numbers, you can also do arithmetic on strings! Well, sort of...you can add strings, anyway.
+
+##### Syntax
 
 - Addition: "Contentanation of Strings"
 
@@ -142,5 +244,432 @@ It’s usually easy to tell which object is performing the method.It’s what co
 
 The important thing to get from all this is that every method is being done by some object, even if it doesn’t have a dot in front of it.
 
+### `puts` and `print` (puts/print)
 
+`puts` and `print` both simply print what ever you give them to the screen. but `puts` is a bit different because it also adds a new blank line after the thing you want it to print.
+
+**IMPORTANT!**
+Before `puts` tries to write out an object, it uses `to_s` to get the string version of that object.
+In fact, the `s` in `puts` stands for string; `puts` really means `put string`.
+
+##### Syntax
+
+```
+puts 'hello'  #=> hello
+puts "hello"  #=> hello
+puts 1        #=> 1
+puts '1'      #=> 1
+puts "---------"
+var1 = "bye "
+var2 = 4
+var3 = 5
+var4 = "Jello"
+
+puts var1    #=> bye
+puts var2    #=> 4
+puts "bye #{var2}" #=> bye 4
+puts "hello" + "Ali" #=>helloAli
+puts var2 + var2     #=> 8
+puts "var2 + var3 = #{var2 + var3}" #=> var2 + var3 = 9
+puts  var1 + var4                 #=> bye Jello
+```
+
+
+### `.to_s` For conversion of an object to string
+
+### `.to_i` For conversion of an object to integer
+### `.to_f` For conversion of an object to float   
+
+
+##### Syntax
+```
+
+var1 = "2"
+var2 = 4
+
+line 3: puts var2.to_s + var1 #=> 42
+puts var1.to_i + var2 #=> 6
+line 5: puts '5 is my favorite number!' .to_i #=> 5
+
+```
+Even after we got the string version of var2 by calling to_s in line 3, var2 was always pointing a the integer 4 and never at string '4' . Unless we explicitly reassign var2 (which requires an = sign), it will point at 4 for the life of the program.
+
+On line 5, to_i ignores the first thing it doesn’t understand (and the rest of the string from that point on). So, the first one was converted to 5 , but the others, since they started with letters, were ignored completely, so the computer just picks zero.
+
+### `gets` Getting input from the user
+
+`gets` is used to get input from the user through keyboard. the input is in the form of string. `gets` means `get string`
+
+`gets` just sits there, reading what you type until you press `Enter` .
+
+`gets` gets also gets the `Enter` pressed while inputing and stores as a new line character `\n`.
+
+### `.chomp` 
+
+To remove the enter we use the method `.chomp` which removes any newline character hanging out at the end of the character
+
+### All Arithematic Operators are Methods too: 
+
+- `+`
+- `-`
+- `*`
+- `/`
+- `**`
+- `%`
+
+## String Methods
+
+### `.length`
+
+returns the length of the string
+
+### `.reverse`
+
+which returns a reversed version of the string.
+
+### `.upcase`
+
+upcase changes every lowercase letter to uppercase
+
+### `downcase`
+
+downcase changes every uppercase letter to lowercase.
+
+### `capitalize`
+
+capitalize is just like downcase , except it switches the first character to uppercase (if it’s a letter)
+
+### `swapcase` 
+
+swapcase switches the case of every letter in the string
+
+**IMPORTANT: All of the above methods dont change the associated object i.i the object calling them.**
+
+
+**Some methods do change associated object.**
+
+### `.center`  
+
+`center(width,paddstr=)`
+
+Centers str in width. If width is greater than the length of str, returns a new String of length width with str centered and padded with padstr; otherwise, returns str.
+
+### `rjust`
+
+`.rjust(integer,padstr=)`
+
+If integer is greater than the length of str, returns a new String of length integer with str right justified and padded with padstr; otherwise, returns str.
+
+### `ljust`
+
+`.ljust(integer,padstr=)`
+
+If integer is greater than the length of str, returns a new String of length integer with str left justified and padded with padstr; otherwise, returns str.
+
+**IMPORTANT: methods can be chained togather like this
+object.method1.method2.method3"**
+
+#### `.include?`
+
+object.include? ""
+
+Ruby's .include? method, which evaluates to true if it finds what it's looking for and false otherwise.
+
+#### `.gsub`
+
+global subtitution:
+`.gsub(/s/,"th")`
+
+can also use the `!` to change the string in place.
+
+
+## Arithematic methods:
+
+### `.abs`
+
+Returns the absolute value of the number.
+
+### rand(argument)
+
+The method to get a randomly chosen number is rand . If you call rand just like that, you’ll get a float greater than or equal to 0.0 and less than 1.0 . If you give it an integer parameter (by calling rand(5) ,for example), it will give you an integer greater than or equal to 0 and less than 5 (so five possible
+numbers, from 0 to 4 ).
+
+**NOTE** Sometimes you might want rand to return the same random numbers in the same sequence on two different runs of your program.In order to do this, you need to set the seed, which youcan do with `srand`
+
+forexample :
+
+```
+srand 1976
+
+puts rand(100)
+puts rand(100)
+puts rand(100)
+```
+It will do the same thing every time you seed it with the same number.If you want to get different numbers again (like what happens if you never use srand ), then just call srand , passing in no parameter.
+
+### The `Math` object
+
+```
+puts(Math::PI)
+puts(Math::E)
+puts(Math.cos(Math::PI/3))
+puts(Math.tan(Math::PI/4))
+puts(Math.log(Math::E**2))
+puts((1 + Math.sqrt(5))/2)
+
+3.14159265358979
+2.71828182845905
+0.5
+1.0
+2.0
+1.61803398874989
+```
+`::` is the scope operator
+`Math` has all the features you would expect a decent
+scientific calculator to have
+
+
+## Flow Control
+
+Control flow gives us the flexibility we're looking for. We can select different outcomes depending on information the user types, the result of a computation, or the value returned by another part of the program.
+
+
+###  Comparison Methods:
+
+Note These are also Methods. They are called the **comparators** or the **relational operators**
+
+The Comparable mixin is used by classes whose objects may be ordered. The class must define the <=> operator, which compares the receiver against another object, returning -1, 0, or +1 depending on whether the receiver is less than, equal to, or greater than the other object. If the other object is not comparable then the <=> operator should return nil.
+
+obj `<` other ` Is obj less than other?`
+
+Compares two objects based on the receiver's <=> method, returning true if it returns -1.
+
+obj `<=` other `Is obj less than or equal to other?`
+
+Compares two objects based on the receiver's <=> method, returning true if it returns -1 or 0.
+
+obj `==` other `Is the obj equal to other?`
+
+It is called the **comparator** or the **relational operator**
+
+Compares two objects based on the receiver's <=> method, returning true if it returns 0. Also returns true if obj and other are the same object.
+
+obj `>` other  `Is the object greater than other?`
+
+compares two objects based on the receiver's <=> method, returning true if it returns 1.
+
+obj `>=` other  `Is object greater than or equal to other?`
+
+Compares two objects based on the receiver's <=> method, returning true if it returns 0 or 1.
+
+`between?(min,max)`   ` Is object between min and max?`
+
+Returns false if obj <=> min is less than zero or if an Object <=> max is greater than zero, true otherwise.
+
+obj `!=` other   `Are these Different?`
+
+**NOTE** The comparison methods aren’t giving
+us the strings 'true' and 'false' ; they are giving us the special objects `true` and `false` that represent...well, truth and falsity. (Of course, true.to_s gives us the string 'true' , which is why puts printed true .) true and false are used all the time in a language construct called branching.
+
+### Branching
+
+Ruby has a variety of ways to control execution. All the expressions described here return a value.
+
+For the tests in these control expressions, nil and false are false-values and true and any other object are true-values. In this document “true” will mean “true-value” and “false” will mean “false-value”.
+
+#### `if`
+
+Ruby's if statement takes an expression, which is just a fancy word for something that has a value that evaluates to either true or false. If that expression is true, Ruby executes the block of code that follows the if. If it's not true (that is, false), Ruby doesn't execute that block of code: it skips it and goes on to the next thing.
+
+
+**Ruby-doc.org:**The simplest if expression has two parts, a “test” expression and a “then” expression. If the “test” expression evaluates to a true then the “then” expression is evaluated. 
+
+```
+if true then
+  puts "the test resulted in a true-value"
+end
+```
+This will print “the test resulted in a true-value”.
+The then is optional.
+
+**The result value of an if expression is the last value executed in the expression.**
+
+If what comes after the if is true , we run the code
+between the if and the end . If what comes after the if is false , we don’t.And that is branching.
+
+#### `else`
+
+The partner to the if statement is the else statement. An if/else statement says to Ruby: "If this expression is true, run this code block; otherwise, run the code after the else statement."
+
+Often, we would like a program to do one thing if an expression is true and another if it is false . That’s what else is for.
+
+#### `elsif`
+
+What if you want more than two options, though? It's elsif to the rescue! The elsif statement can add any number of alternatives to an if/else statement, 
+
+
+##### Syntax
+```
+a = 1
+
+if a == 0
+  puts "a is zero"
+elsif a == 1
+  puts "a is one"
+elsif a >= 1
+  puts "a is greater than or equal to one"
+else
+  puts "a is some other value"
+end
+```
+
+#### `unless`
+
+**Ruby-doc.org:**The unless expression is the opposite of the if expression. If the value is false, the “then” expression is executed:
+
+##### Syntax
+
+```
+unless true
+  puts "the value is a false-value"
+end
+```
+This prints nothing as true is not a false-value.
+
+You may use an optional then with unless just like if.
+
+Note that the above unless expression is the same as:
+```
+if not true
+  puts "the value is a false-value"
+end
+```
+##### Syntax
+
+Like an if expression you may use an else condition with unless:
+```
+unless true
+  puts "the value is false"
+else
+  puts "the value is true"
+end
+```
+This prints “the value is true” from the else condition.
+
+##### Syntax
+
+**IMPORTANT NOTE: You may not use elsif with an unless expression.**
+
+
+
+### Boolean or logical operators
+
+Evalaute the expressions on both sides and **returns** `true` or `false`
+
+#### And `&&`
+
+The boolean operator `and`, `&&`, only results in true when both expression on either side of `&&` are true.
+
+#### Or `||`
+
+Ruby's || is called an inclusive or because it evaluates to true when one or the other or both expressions are true.
+
+#### Not `!`
+
+Ruby has the boolean operator not (!). ! makes true values false, and vice-versa.
+
+
+### `Case` When
+
+
+**Ruby-doc.org:**The most common way of using `case` is to compare an object against multiple patterns
+
+```
+case "12345"
+when /^1/
+  puts "the string starts with one"
+else
+  puts "I don't know what the string starts with"
+end
+```
+**_Like the if expression, the first when that matches is executed and all other matches are ignored. If no matches are found, the else is executed.The else and then are optional,_**
+
+This case expression gives the same result as the one above:
+
+```
+case "12345"
+when /^1/
+  puts "the string starts with one"
+end
+```
+
+You may place multiple conditions on the same when, Ruby will try each condition in turn:
+
+```
+case "2"
+when /^1/, "2"
+  puts "the string starts with one or is '2'"
+end
+```
+The other way to use a `case` expression is like an if-elsif expression:
+
+```
+a = 2
+
+case
+when a == 1, a == 2
+  puts "a is one or two"
+when a == 3
+  puts "a is three"
+else
+  puts "I don't know what a is"
+end
+```
+
+**IMPORTANT NOTE: The result value of a case expression is the last value executed in the expression.**
+
+### Looping
+
+#### `while` 
+
+**Ruby-doc.org:**The while loop executes while a condition is true.
+
+```
+a = 0
+
+while a < 10 do
+  p a
+  a += 1
+end
+
+p a
+```
+Prints the numbers 0 through 10. The condition a < 10 is checked before the loop is entered, then the body executes, then the condition is checked again. When the condition results in false the loop is terminated.
+
+**The do keyword is optional.**
+**The result of a while loop is nil unless break is used to supply a value.**
+
+
+
+#### `until`
+
+The complement to the while loop is the until loop. While a condition is `false` it will continue the loop.
+
+**Ruby-doc.org:**The until loop executes while a condition is false:
+
+```
+a = 0
+
+until a > 10 do
+  p a
+  a += 1
+end
+
+p a
+```
+This prints the numbers 0 through 11. Like a while loop the condition a > 10 is checked when entering the loop and each time the loop body executes. If the condition is false the loop will continue to execute.
+
+**Like a while loop, the do is optional.**
+
+**Like a while loop, the result of an until loop is nil unless break is used.**
 
