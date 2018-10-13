@@ -45,9 +45,11 @@ For Example the '#split' method for strings, which means that split is an instan
 
 >Public Class Methods are called directly from the class.
 
-::new
-::try_convert
+- ::new
+- ::try_convert
+
  b = String.new("blue")
+
  c = String.try_convert(2)
 
 ### Parent
@@ -127,14 +129,81 @@ Integers are numbers without decimal points. Floats or Floating-point numbers ar
 
 ## Strings
 
+**----------------LaunchSchool------------------**
+
+- A string is a list of characters in a specific sequence. 
+- Strings are surrounded by either single quotes ('hi there') or double quotes ("hi there"). 
+- Both of these formats create a string, however, there are some differences.
+- If you'd like to include single quotes within your string then you have two options. You can either use the double quote method or the single quote method with escaping
+- The backslash, or escape (\) character, tells the computer that the quotes that follow it are not meant as Ruby syntax but only as simple quote characters to be included in the string.
+- Double quotes allow something called **string interpolation**  
+
+`puts "My favorite number is #{a}!"`
+
+- String interpolation only works within **double quotes**.
+- The basic syntax is: #{ruby expression goes here}
+- the returned expression will be concatenated with the surrounding string
+
 We refer to groups of letters in a program as strings.
 Strings can have punctuation, digits, symbols, and spaces in them...more than just letters. That last string doesn’t have anything in it at all; we call that an empty string.
+
+**END**
 
 ##### Syntax
 
 ` "this is a string"`
 ` 'this is also a #string'`
 ` 'I\'m a string too'`
+
+**LaunchSchool**
+
+## Symbols
+
+> Ruby symbols are created by placing a colon (:) before a word.
+
+A symbol is used when you want to reference something like a string but don't ever intend to print it to the screen or change it. It is often referred to as an immutable (i.e. unchangeable) string. 
+
+## `nil`
+
+n programming, we need a way to express "nothing", and in Ruby, we do this through something called nil. A variable with a value of nil could be described as having 'nothing' or being 'completely empty', or even just simply 'not any specific type'. 
+
+The puts method prints out a string and returns nothing, so we see nil being returned after the string is displayed.
+
+- use `.nil?` to check if something is `nil` type
+
+- An important property of the nil type is that when used in an expression, such as an if statement, it will be treated as false, as it represents an absence of content.
+
+## Basic Datastructures
+
+### Arrays
+
+An array is used to organize information into an ordered list. The list can be made up of strings, integers, floats, booleans, or any other data type. In Ruby, an array is denoted by square brackets [ ]. Inside the brackets you can create a list of elements separated by commas.
+
+The key thing to remember about an array is that order is important, and elements within an array can be retrieved by their index, which starts at 0.
+
+### Hashes
+
+A hash, sometimes referred to as a dictionary, is a set of key-value pairs. It is represented with curly braces { }. A key-value pair is an association where a key is assigned a specific value. A hash consists of a key, usually represented by a symbol, that points to a value (denoted using a =>) of any type of data.
+
+The most important thing to remember about hashes is that you use keys to set or retrieve values. Let's move on for now and we'll visit these concepts again later on.
+
+## Expressions and Return
+
+When you type something in at the irb prompt you are creating an **expression**. An **expression** is anything that can be evaluated, and pretty much everything you write in Ruby is an expression.
+
+> An expression in a programming language is a combination of one or more constants, variables, operators, and functions that the programming language interprets (according to its particular rules of precedence and of association) and computes to produce ("to return", in a stateful environment) another value. Wikipedia
+
+Every time you enter something into irb you see the `=>` back, which is called a hash rocket (cool name, huh?), followed by whatever your Ruby expression returns.
+
+**IMPORTANT: An expression(anything that can be evaluated) in Ruby always returns something, even if that's an error message or `nil`**
+
+## puts vs. return
+
+When we call the puts method, we're telling Ruby to print something to the screen. However, **puts does not return what is printed to the screen.**
+
+Expressions **do** something, but they also **return** something. **The value returned is not necessarily the action that was performed.**
+
+
 
 ## Variables Assignment
 
@@ -248,6 +317,8 @@ The important thing to get from all this is that every method is being done by s
 
 `puts` and `print` both simply print what ever you give them to the screen. but `puts` is a bit different because it also adds a new blank line after the thing you want it to print.
 
+`puts` returns `nil`
+
 **IMPORTANT!**
 Before `puts` tries to write out an object, it uses `to_s` to get the string version of that object.
 In fact, the `s` in `puts` stands for string; `puts` really means `put string`.
@@ -296,7 +367,7 @@ Even after we got the string version of var2 by calling to_s in line 3, var2 was
 
 On line 5, to_i ignores the first thing it doesn’t understand (and the rest of the string from that point on). So, the first one was converted to 5 , but the others, since they started with letters, were ignored completely, so the computer just picks zero.
 
-### `gets` Getting input from the user
+### `.gets` Getting input from the user
 
 `gets` is used to get input from the user through keyboard. the input is in the form of string. `gets` means `get string`
 
@@ -331,15 +402,15 @@ which returns a reversed version of the string.
 
 upcase changes every lowercase letter to uppercase
 
-### `downcase`
+### `.downcase`
 
 downcase changes every uppercase letter to lowercase.
 
-### `capitalize`
+### `.capitalize`
 
 capitalize is just like downcase , except it switches the first character to uppercase (if it’s a letter)
 
-### `swapcase` 
+### `.swapcase` 
 
 swapcase switches the case of every letter in the string
 
@@ -354,13 +425,13 @@ swapcase switches the case of every letter in the string
 
 Centers str in width. If width is greater than the length of str, returns a new String of length width with str centered and padded with padstr; otherwise, returns str.
 
-### `rjust`
+### `.rjust`
 
 `.rjust(integer,padstr=)`
 
 If integer is greater than the length of str, returns a new String of length integer with str right justified and padded with padstr; otherwise, returns str.
 
-### `ljust`
+### `.ljust`
 
 `.ljust(integer,padstr=)`
 
@@ -389,7 +460,7 @@ can also use the `!` to change the string in place.
 
 Returns the absolute value of the number.
 
-### rand(argument)
+### `rand(argument)`
 
 The method to get a randomly chosen number is rand . If you call rand just like that, you’ll get a float greater than or equal to 0.0 and less than 1.0 . If you give it an integer parameter (by calling rand(5) ,for example), it will give you an integer greater than or equal to 0 and less than 5 (so five possible
 numbers, from 0 to 4 ).
@@ -450,7 +521,7 @@ Compares two objects based on the receiver's <=> method, returning true if it re
 
 obj `==` other `Is the obj equal to other?`
 
-It is called the **comparator** or the **relational operator**
+To test the equality of two things you can use the == operator. This compares the object on the left of the == with the object on the right and returns either true or false.
 
 Compares two objects based on the receiver's <=> method, returning true if it returns 0. Also returns true if obj and other are the same object.
 
