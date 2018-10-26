@@ -15,8 +15,8 @@ whether the top heading says String or Encoding::Converter, it's referring to th
 When looking at the method list on the side bar, the :: means something different: it means that the method after the :: is a class method.
 As a documentation convention, methods are listed out with either a `::` or a `#` to indicate two different kinds of publicly accessible methods. Methods denoted by `::` are considered class methods, while methods denoted by # are considered instance methods.
 
-`::` class methods
-`#`  Instance methods
+- `::` class methods
+- `#`  Instance methods
 
 Beyond documentation, don't get caught up with these symbols because they have completely different meanings when executed in Ruby code. For example, the :: symbol is used as a namespace in actual Ruby code, while the # is used as a comment. Their use here in Ruby documentation is completely different from their use in actual code.
 
@@ -165,13 +165,16 @@ A symbol is used when you want to reference something like a string but don't ev
 
 ## `nil`
 
-n programming, we need a way to express "nothing", and in Ruby, we do this through something called nil. A variable with a value of nil could be described as having 'nothing' or being 'completely empty', or even just simply 'not any specific type'. 
+In programming, we need a way to express "nothing", and in Ruby, we do this through something called nil. A variable with a value of nil could be described as having 'nothing' or being 'completely empty', or even just simply 'not any specific type'. 
 
 The puts method prints out a string and returns nothing, so we see nil being returned after the string is displayed.
 
 - use `.nil?` to check if something is `nil` type
 
 - An important property of the nil type is that when used in an expression, such as an if statement, it will be treated as false, as it represents an absence of content.
+
+- But `false == nil` returns `false`
+While both false and nil are both treated as negative when evaluated in an expression, they are not equivalent
 
 ## Basic Datastructures
 
