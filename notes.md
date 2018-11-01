@@ -163,6 +163,13 @@ Strings can have punctuation, digits, symbols, and spaces in them...more than ju
 
 A symbol is used when you want to reference something like a string but don't ever intend to print it to the screen or change it. It is often referred to as an immutable (i.e. unchangeable) string. 
 
+A Symbol is the most basic Ruby object you can create. It's just a name and an internal ID. Symbols are useful because a given symbol name refers to the same object throughout a Ruby program. 
+
+You don't have to pre-declare a symbol and they are guaranteed to be unique. There's no need to assign some kind of value to a symbol - Ruby takes care of that for you. Ruby also guarantees that no matter where it appears in your program, a particular symbol will have the same value.
+
+Symbols are more efficient than strings. Two strings with the same contents are two different objects, but for any given name there is only one Symbol object. This can save both time and memory.
+
+
 ## `nil`
 
 In programming, we need a way to express "nothing", and in Ruby, we do this through something called nil. A variable with a value of nil could be described as having 'nothing' or being 'completely empty', or even just simply 'not any specific type'. 
@@ -189,6 +196,47 @@ The key thing to remember about an array is that order is important, and element
 A hash, sometimes referred to as a dictionary, is a set of key-value pairs. It is represented with curly braces { }. A key-value pair is an association where a key is assigned a specific value. A hash consists of a key, usually represented by a symbol, that points to a value (denoted using a =>) of any type of data.
 
 The most important thing to remember about hashes is that you use keys to set or retrieve values. Let's move on for now and we'll visit these concepts again later on.
+
+Also called associative arrays, they are similar to Arrays, but where an Array uses integers as its index, a Hash allows you to use any object type.
+
+Hashes enumerate their values in the order that the corresponding keys were inserted.
+
+A Hash can be easily created by using its implicit form:
+
+`grades = { "Jane Doe" => 10, "Jim Doe" => 6 }`
+
+Hashes allow an alternate syntax for keys that are symbols. Instead of
+
+`options = { :font_size => 10, :font_family => "Arial" }`
+
+You could write it as:
+
+`options = { font_size: 10, font_family: "Arial" }`
+
+Each named key is a symbol you can access in hash:
+
+`options[:font_size]  # => 10`
+
+A Hash can also be created through its ::new method:
+
+```
+grades = Hash.new
+grades["Dorothy Doe"] = 9
+```
+**IMPORTANT**
+Hashes have a default value that is returned when accessing keys that do not exist in the hash.
+
+If no default is set nil is used. You can set the default value by sending it as an argument to ::new:
+
+grades = Hash.new(0)
+Or by using the default= method:
+
+```
+grades = {"Timmy Doe" => 8}
+grades.default = 0
+```
+
+
 
 ## Expressions and Return
 

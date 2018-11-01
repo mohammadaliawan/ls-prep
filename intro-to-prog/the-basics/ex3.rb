@@ -31,7 +31,6 @@ puts movies[:harrypotter7]
 # }
 
 
-
 # movies.each{|movie,year| puts year}
 
 
