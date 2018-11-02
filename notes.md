@@ -237,7 +237,6 @@ grades.default = 0
 ```
 
 
-
 ## Expressions and Return
 
 When you type something in at the irb prompt you are creating an **expression**. An **expression** is anything that can be evaluated, and pretty much everything you write in Ruby is an expression.
@@ -325,6 +324,9 @@ the apostrophe and the backslash itself.
 
 Variables are used for storing data. Its like giving a name to that piece of data so you can use it again and again just refering to it by its name. Programmers refer to this process of naming __assignment__ and they call these names variables.
 
+>LaunchSchool: Variables are used to store information to be referenced and manipulated in a computer program. They also provide a way of labeling data with a descriptive name, so our programs can be understood more clearly by the reader and ourselves. It is helpful to think of variables as containers that hold information. Their sole purpose is to label and store data in memory. This data can then be used throughout your program. 
+
+
 A variable name can be any sequence of numbers and letters, but in ruby **the first character of this name needs to be a lowercase letter**
 
 the variable name basically **points** to what it is being assigned. Just as we can __assign__ an object to a variable, we can __reassign__ a different object for that variable to point to.
@@ -348,6 +350,69 @@ puts var2   #=> 8
 In the above example: var1 points to the value 8. when we assign `var2 = var1` we are actually asking ruby to point `var2` to the same value as `var1` i.e. 8.  
 
 **However, if you _change_ or _mutate_ the value at the location where it is stored i.e. in the storage using the e.g `.capitalize!` method!, then since the var2 is also pointing to the same location as var1. the value of `var2` also changes.**
+
+##Variable scope
+
+A variable's scope is defined by where the variable is initialized or created.
+A variable's scope determines where in a program a variable is available for use.
+
+**In Ruby, variable scope is defined by a block. A block is a piece of code following a method invocation, usually delimited by either curly braces {} or do/end**
+
+
+**Inner scope can access variables initialized in an outer scope, but not vice versa.**
+
+* Note: the key distinguishing factor for deciding whether code delimited by {} or do/end is considered a block (and thereby creates a new scope for variables), is seeing if the {} or do/end immediately follows a method invocation. For or while loops or if-else expressions blocks donot limit variable scope
+
+
+##Types of Variables:
+
+**Five Types**
+
+1. Constants
+2. Global Variables
+3. Class Variables
+4. Instance Variables
+5. Local Variables
+
+### Constants:
+
+- Constants are declared by capitalizing every letter in the variable's name. - They are used for storing data that never needs to change. 
+- While most programming languages do not allow you to change the value assigned to a constant, Ruby does. It will however throw a warning letting you know that there was a previous definition for that variable. Just because you can, doesn't mean you should change the value. In fact, you should not. 
+
+- Constants cannot be declared in method definitions
+- Are available throughout your application's scopes.
+example ` MY_CONSTANT = "Hello"`
+
+### Global Variables:
+
+- Global variables are declared by starting the variable name with the dollar sign ($)
+- These variables are available throughout your entire app, overriding all scope boundaries. 
+- example `$var = "'I am also available throughout your app."`
+
+### Class Variables:
+
+- Class variables are declared by starting the variable name with two @ signs
+- **Scope: These variables are accessible by instances of your class, as well as the class itself.**
+- When you need to declare a variable that is related to a class, but each instance of that class does not need its own value for this variable, you use a class variable.
+- **Initialization: a Class variables must be initialized at the class level, outside of any method definitions.**
+- They can then be altered using class or instance method definitions.
+- example: `@@instances = 0`
+
+### Instance Variables:
+
+- Instance variables are declared by starting the variable name with one @ sign.
+- These variables are available throughout the current instance of the parent class
+-  Instance variables can cross some scope boundaries, but not all of them. 
+- example: `@var = 'I am available throughout the current instance of this class.'`
+
+### Local Variables:
+
+- Local variables are most common variables you will come across and obey all scope boundaries.
+- These variables are declared by starting the variable name with neither $ nor @, as well as not capitalizing the entire variable name.
+
+`var = 'I must be passed around to cross scope boundaries.'`
+
+
 
 ## Methods
 
