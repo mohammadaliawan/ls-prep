@@ -1,4 +1,4 @@
-a = 5
+a =5
 
 3.times do |n|
   a = 3

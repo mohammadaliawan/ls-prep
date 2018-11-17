@@ -1,13 +1,11 @@
-puts "What is your first name? "
+puts "Please type in your first name"
 first_name = gets.chomp
-
-puts "what is your last name?"
+puts "Please type in your last name"
 last_name = gets.chomp
 
-puts "Hi #{first_name} #{last_name}"
+puts "Hello! #{first_name} #{last_name}"
 
-
-# 10.times do
-# puts user_name
+# 10.times do |n|
+#   puts name
 # end
 
