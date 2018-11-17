@@ -429,6 +429,19 @@ It’s usually easy to tell which object is performing the method.It’s what co
 
 The important thing to get from all this is that every method is being done by some object, even if it doesn’t have a dot in front of it.
 
+**Arguments** are pirces of information that are sent to the method invocation to be modified or used to return a specific result. We pass arguments to a method when we call it.
+When we pass those arguments into a method definition , they are assigned to the parameter which is a local variable inside the method definition's scope. The parameter local variable is scoped at the method definition level; that is, we cannot reference this local variable outside of the method definition.
+
+###Syntax for Defining Methods
+
+```
+def say(parameter)
+  #method body(method logic)
+end
+```
+We call or invoke the method by typing out its name and passing in arguments. 
+**Parameters** are used when we have data outside of a method definition;s scope, but youneed to access it within the method definition. If the method definition does not need access to any outside data, you do not need to define any parameters.
+
 ### `puts` and `print` (puts/print)
 
 `puts` and `print` both simply print what ever you give them to the screen. but `puts` is a bit different because it also adds a new blank line after the thing you want it to print.

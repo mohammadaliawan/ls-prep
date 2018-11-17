@@ -1,0 +1,1 @@
+In the first case `3` is printed to the screen. In the second case we will get an error because x has an inner scope inside the .times block and is not accessible outside this block.
