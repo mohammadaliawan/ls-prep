@@ -429,7 +429,9 @@ It’s usually easy to tell which object is performing the method.It’s what co
 
 The important thing to get from all this is that every method is being done by some object, even if it doesn’t have a dot in front of it.
 
-**Arguments** are pirces of information that are sent to the method invocation to be modified or used to return a specific result. We pass arguments to a method when we call it.
+
+
+**Arguments** are pieces of information that are sent to the method invocation to be modified or used to return a specific result. We pass arguments to a method when we call it.
 When we pass those arguments into a method definition , they are assigned to the parameter which is a local variable inside the method definition's scope. The parameter local variable is scoped at the method definition level; that is, we cannot reference this local variable outside of the method definition.
 
 ###Syntax for Defining Methods
@@ -440,7 +442,20 @@ def say(parameter)
 end
 ```
 We call or invoke the method by typing out its name and passing in arguments. 
-**Parameters** are used when we have data outside of a method definition;s scope, but youneed to access it within the method definition. If the method definition does not need access to any outside data, you do not need to define any parameters.
+**Parameters** are used when we have data outside of a method definition's scope, but you need to access it within the method definition. If the method definition does not need access to any outside data, you do not need to define any parameters.
+
+###Method Definition and Local Variable Scope
+
+A method definition creates its own scope outside the regular flow of execution. This is why local variables within a method definition cannot be referenced from outside of the method definition.
+
+It is also the reason why local variables within a method definition cannot access data outside of the method definition(unless the data is passed in as a parameter)
+
+Method Definitions cannot modify arguments passed into them permanently.
+
+The exception is when we perform some action on the argument that **mutates the caller**
+
+
+
 
 ### `puts` and `print` (puts/print)
 
