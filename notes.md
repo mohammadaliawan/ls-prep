@@ -450,9 +450,10 @@ A method definition creates its own scope outside the regular flow of execution.
 
 It is also the reason why local variables within a method definition cannot access data outside of the method definition(unless the data is passed in as a parameter)
 
-Method Definitions cannot modify arguments passed into them permanently.
+**Method Definitions cannot modify arguments passed into them permanently.**
 
-The exception is when we perform some action on the argument that **mutates the caller**, we can in fact permanently alter variables outside the method definition scope
+**The exception is when we perform some action on the argument that _*mutates the caller*_, we can in fact permanently alter variables outside the method definition scope**
+
 
 ###Method Return
 
@@ -680,6 +681,9 @@ Control flow gives us the flexibility we're looking for. We can select different
 
 Note These are also Methods. They are called the **comparators** or the **relational operators**
 
+**LaunchSchool**
+Comparison Operators always return a boolean value. A boolean value is either `true` or `false` nothing else.
+
 The Comparable mixin is used by classes whose objects may be ordered. The class must define the <=> operator, which compares the receiver against another object, returning -1, 0, or +1 depending on whether the receiver is less than, equal to, or greater than the other object. If the other object is not comparable then the <=> operator should return nil.
 
 obj `<` other ` Is obj less than other?`
@@ -718,6 +722,8 @@ us the strings 'true' and 'false' ; they are giving us the special objects `true
 Ruby has a variety of ways to control execution. All the expressions described here return a value.
 
 For the tests in these control expressions, nil and false are false-values and true and any other object are true-values. In this document “true” will mean “true-value” and “false” will mean “false-value”.
+
+**In Ruby every expression evaluates to true when used in flow control, except for `false` and `nil`.**
 
 #### `if`
 
@@ -871,6 +877,14 @@ end
 **IMPORTANT NOTE: The result value of a case expression is the last value executed in the expression.**
 
 ### Looping
+
+A loop is the repetitive execution of a piece of code for a given amount of repetitions or until a certain condition is met. 
+
+### `loop`
+
+The simplest way to create a loop in Ruby is using the loop method. loop takes a block, which is denoted by { ... } or do ... end. A loop will execute any code within the block (again, that's just between the {} or do ... end) until you manually intervene with Ctrl + c or insert a break statement inside the block, which will force the loop to stop and the execution will continue after the loop.
+
+The break keyword allows us to exit a loop at any point, so any code after a break will not be executed. Note that break will not exit the program, but only exit the loop and execution will continue on from after the loop.
 
 #### `while` 
 
