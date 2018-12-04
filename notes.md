@@ -717,15 +717,31 @@ obj `!=` other   `Are these Different?`
 **NOTE** The comparison methods aren’t giving
 us the strings 'true' and 'false' ; they are giving us the special objects `true` and `false` that represent...well, truth and falsity. (Of course, true.to_s gives us the string 'true' , which is why puts printed true .) true and false are used all the time in a language construct called branching.
 
+### Boolean or logical operators
+
+Evalaute the expressions on both sides and **returns** `true` or `false`
+
+#### And `&&`
+
+The boolean operator `and`, `&&`, only results in true when both expression on either side of `&&` are true.
+
+#### Or `||`
+
+Ruby's || is called an inclusive or because it evaluates to true when one or the other or both expressions are true.
+
+#### Not `!`
+
+Ruby has the boolean operator not (!). ! makes true values false, and vice-versa.
+
 ### Branching
 
-Ruby has a variety of ways to control execution. All the expressions described here return a value.
+Ruby has a variety of ways to control execution. **All the expressions described here return a value.**
 
 For the tests in these control expressions, nil and false are false-values and true and any other object are true-values. In this document “true” will mean “true-value” and “false” will mean “false-value”.
 
 **In Ruby every expression evaluates to true when used in flow control, except for `false` and `nil`.**
 
-#### `if`
+#### `if` Expression
 
 Ruby's if statement takes an expression, which is just a fancy word for something that has a value that evaluates to either true or false. If that expression is true, Ruby executes the block of code that follows the if. If it's not true (that is, false), Ruby doesn't execute that block of code: it skips it and goes on to the next thing.
 
@@ -740,8 +756,6 @@ end
 This will print “the test resulted in a true-value”.
 The then is optional.
 
-**The result value of an if expression is the last value executed in the expression.**
-
 If what comes after the if is true , we run the code
 between the if and the end . If what comes after the if is false , we don’t.And that is branching.
 
@@ -749,12 +763,26 @@ between the if and the end . If what comes after the if is false , we don’t.An
 
 The partner to the if statement is the else statement. An if/else statement says to Ruby: "If this expression is true, run this code block; otherwise, run the code after the else statement."
 
-Often, we would like a program to do one thing if an expression is true and another if it is false . That’s what else is for.
 
 #### `elsif`
 
 What if you want more than two options, though? It's elsif to the rescue! The elsif statement can add any number of alternatives to an if/else statement, 
 
+You may add an arbitrary number of extra tests to an if expression using elsif. 
+
+**An elsif executes when all tests above the elsif are false.**
+
+**Once a condition matches, either the if condition or any elsif condition, the if expression is complete and no further tests will be performed.**
+
+The tests for if and elsif may have side-effects. The most common use of side-effect is to cache a value into a local variable:
+
+```
+if a = object.some_value
+  # do something to a
+end
+```
+
+**The result value of an if expression is the last value executed in the expression.**
 
 ##### Syntax
 ```
@@ -770,6 +798,17 @@ else
   puts "a is some other value"
 end
 ```
+
+#### Ternary `if`
+
+The ternary operator is a common Ruby idiom that makes a quick if/else statement easy and keeps it all on one line.
+
+The ternary operator uses a combination of the ? and :
+
+`true ? "this is true" : "this is not true"`
+
+first the computer evaluates what is to the left of the ?. If the expression to the left of ? is true, the code directly to the right of the ? gets executed. If the code on the left of the ? is false, then the code directly to the right of the : gets executed.
+
 
 #### `unless`
 
@@ -792,7 +831,6 @@ if not true
   puts "the value is a false-value"
 end
 ```
-##### Syntax
 
 Like an if expression you may use an else condition with unless:
 ```
@@ -804,30 +842,18 @@ end
 ```
 This prints “the value is true” from the else condition.
 
-##### Syntax
 
 **IMPORTANT NOTE: You may not use elsif with an unless expression.**
 
+**The result value of an unless expression is the last value executed in the expression.**
 
+### Modifier `if` and `unless`
 
-### Boolean or logical operators
+`if` and `unless` can also be used to modify an expression. When used as a modifier the left hand side is the then expression and the right hand side is the test expression.
 
-Evalaute the expressions on both sides and **returns** `true` or `false`
+`a += 1 if a < 10`
 
-#### And `&&`
-
-The boolean operator `and`, `&&`, only results in true when both expression on either side of `&&` are true.
-
-#### Or `||`
-
-Ruby's || is called an inclusive or because it evaluates to true when one or the other or both expressions are true.
-
-#### Not `!`
-
-Ruby has the boolean operator not (!). ! makes true values false, and vice-versa.
-
-
-### `Case` When
+### `Case` When Expression
 
 
 **Ruby-doc.org:**The most common way of using `case` is to compare an object against multiple patterns
@@ -842,16 +868,8 @@ end
 ```
 **_Like the if expression, the first when that matches is executed and all other matches are ignored. If no matches are found, the else is executed.The else and then are optional,_**
 
-This case expression gives the same result as the one above:
 
-```
-case "12345"
-when /^1/
-  puts "the string starts with one"
-end
-```
-
-You may place multiple conditions on the same when, Ruby will try each condition in turn:
+**You may place multiple conditions on the same when, Ruby will try each condition in turn:**
 
 ```
 case "2"
@@ -859,7 +877,7 @@ when /^1/, "2"
   puts "the string starts with one or is '2'"
 end
 ```
-The other way to use a `case` expression is like an if-elsif expression:
+#### The other way to use a `case` expression is like an if-elsif expression:
 
 ```
 a = 2
@@ -873,6 +891,23 @@ else
   puts "I don't know what a is"
 end
 ```
+#### You dont have to give `case` an argument either:
+
+This also works:
+
+```
+a= 5
+
+answer = case
+
+when a == 5
+  "a is 5"
+when a == 6
+  "a is 6"
+else
+  "a is neither 5 nor 6"
+end
+```
 
 **IMPORTANT NOTE: The result value of a case expression is the last value executed in the expression.**
 
@@ -880,15 +915,27 @@ end
 
 A loop is the repetitive execution of a piece of code for a given amount of repetitions or until a certain condition is met. 
 
-### `loop`
+#### `loop`
 
 The simplest way to create a loop in Ruby is using the loop method. loop takes a block, which is denoted by { ... } or do ... end. A loop will execute any code within the block (again, that's just between the {} or do ... end) until you manually intervene with Ctrl + c or insert a break statement inside the block, which will force the loop to stop and the execution will continue after the loop.
 
-The break keyword allows us to exit a loop at any point, so any code after a break will not be executed. Note that break will not exit the program, but only exit the loop and execution will continue on from after the loop.
+**The `break` keyword allows us to exit a loop at any point, so any code after a break will not be executed. Note that break will not exit the program, but only exit the loop and execution will continue on from after the loop.**
+
+**The `next` keyword can be used to skip the rest of the current iteration of the loop and start with the next one**
+
+`break` and `next` are important loop control concepts that can be used with loop or any other loop construct in Ruby
+
+**Important: `loop` is an instance method of the class`kernel`.**
+
+**What does `loop` block return? It returns nil unless break is used to supply a value**
 
 #### `while` 
 
 **Ruby-doc.org:**The while loop executes while a condition is true.
+
+A while loop is given a parameter that evaluates to a boolean (remember, that's just true or false). Once that boolean expression becomes false, the while loop is not executed again, and the program continues after the while loop. 
+
+**The code within the loop must modify the variable x in some way. If it does not, then x >= 0 will always evaluate to true and cause an infinite loop.**
 
 ```
 a = 0
@@ -903,6 +950,7 @@ p a
 Prints the numbers 0 through 10. The condition a < 10 is checked before the loop is entered, then the body executes, then the condition is checked again. When the condition results in false the loop is terminated.
 
 **The do keyword is optional.**
+
 **The result of a while loop is nil unless break is used to supply a value.**
 
 
@@ -928,4 +976,41 @@ This prints the numbers 0 through 11. Like a while loop the condition a > 10 is 
 **Like a while loop, the do is optional.**
 
 **Like a while loop, the result of an until loop is nil unless break is used.**
+
+#### `do/while`
+
+A do/while loop works in a similar way to a while loop; one important difference is that the code within the loop gets executed one time, prior to the conditional check to see if the code should be executed. In a "do/while" loop, the conditional check is placed at the end of the loop as opposed to the beginning.
+
+A classic use case for a "do/while", when we want to repeatedly perform an action based on some condition, but we want the action to be executed at least one time no matter what.
+
+#####Syntax
+
+```
+loop do
+  puts "Do you want to do that again?"
+  answer = gets.chomp
+  if answer != 'Y'
+    break
+  end
+end
+```
+
+#### `For` Loops
+
+In Ruby, for loops are used to loop over a collection of elements.
+Unlike a while loop where if we're not careful we can cause an infinite loop, for loops have a definite end since it's looping over a finite number of elements. 
+
+#####Syntax
+
+The for loop consists of `for` followed by a variable to contain the iteration argument followed by `in` and the `value` to iterate over using each.
+
+```
+for i in 1..2 do
+ puts i
+ end
+ ```
+
+**The for loop is similar to using each, but does not create a new variable scope.**
+
+**Returns: The result of a for loop is the value iterated over unless `break` is used.**
 
