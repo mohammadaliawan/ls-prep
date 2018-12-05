@@ -1014,3 +1014,32 @@ for i in 1..2 do
 
 **Returns: The result of a for loop is the value iterated over unless `break` is used.**
 
+#### Iterators
+
+Iterators are methods that naturally loop over a given set of data and allow you to operate on each element in the collection.
+
+##### `.each`  to loop over a collection of elements
+
+```
+array.each { |variable| #do this for each element in the array}
+```
+The `.each` method is called using the `.` operator. e.g `array.each`. It loops through each element in the array starting from the first one. It assigns that element of the array to `variable` and executes the logic in the block following the method invocation. Once a block execution is complete the next iteration begins with the `variable` being assigned to the next element in the array followed by execution of block.
+
+**`each` method of the class array returns the array that calls it.**
+
+##### block
+
+A block is just some lines of code ready to be executed. There are two styles when using blocks. We use the curly braces when everything can be contained in one line.
+But we use the words `do` and `end` when there are multi-line operations.
+
+**codecademy: You can think of blocks as a way of creating methods that don't have a name. (These are similar to anonymous functions in JavaScript or lambdas in Python.)
+Methods can be called as many times as we want to, but blocks are executed only once and in context of the array or any other DS that we are calling a method on. It appears just long enough to do some work for the method and then it is done**
+
+##### Recursion
+
+Recursion is another way to create a loop is ruby. Recursion is the act of calling a method from within itself.
+
+#### The key concept with RECURSION is that there is some baseline condition that returns a value which then "unwinds" the recursive calls.
+
+#### You can think of the recursive calls building up until some value is returned and only then can the recursive call be evaluated.
+
