@@ -1014,6 +1014,9 @@ for i in 1..2 do
 
 **Returns: The result of a for loop is the value iterated over unless `break` is used.**
 
+#5-Dec-2018
+
+
 #### Iterators
 
 Iterators are methods that naturally loop over a given set of data and allow you to operate on each element in the collection.
@@ -1043,3 +1046,69 @@ Recursion is another way to create a loop is ruby. Recursion is the act of calli
 
 #### You can think of the recursive calls building up until some value is returned and only then can the recursive call be evaluated.
 
+## Arrays
+
+An Array is an ordered list of elements that can be of any type.
+Arrays are what we call indexed lists. Each slot in an array has an idex number associated with it.You can reference any element of an array by its index number.
+
+`array[3]`
+
+All array indices start with the number 0.
+
+### `.pop` method
+
+you can use the `.pop`method to remove the last element of an array permanently and return it or `nil` is returned if the array is empty.
+
+If a number is given as an argument such as `.pop(n)`. This will remove the last n elements of the array and return an array of those elements.
+
+This method **mutates the caller**.
+So this method does something but returns something else. There is a difference between the returned value of a expression and what the expression is actually doing.
+
+### `.push` method
+
+you can add an item permanently to an array using the `.push` method.
+Pushes the given objects on to the end of this array.This expression **returns the array itself, so several appends may be chained togather. e.g `array.push(5).push(6)`**
+
+### shovel operator `<<`
+
+Does the same as the push method. Pushes the given object on to the end of this array. This expression also **returns the array itself, so several appends may be chained together.**
+
+```
+a = [ 1, 2 ]
+a << "c" << "d" << [ 3, 4 ]
+        #=>  [ 1, 2, "c", "d", [ 3, 4 ] ]
+a
+        #=>  [ 1, 2, "c", "d", [ 3, 4 ] ]
+```
+
+####Both the `push` and the `<<` methods mutate the caller, so the original array is modified.
+
+### `.map` / `.collect`methods
+
+iterates over an array applying a block to each element of the array and returns a new array with those results.
+
+Invokes the given block once for each element of self.
+
+Creates a new array containing the values returned by the block.
+
+####`collect(enum)`
+
+Returns a new array with the results of running block once for every element in enum.
+
+`collect{|obj| block} => a new array`
+
+You'll notice that after performing these methods there is no change to the initial array. These methods are not destructive (i.e., they don't mutate the caller). How do you know which methods mutate the caller and which ones don't? You have to use the methods and pay attention to the output in irb; that is, you have to memorize or know through using it.
+
+### `.delete_at(i)`
+
+The delete_at method can be helpful if you'd like to eliminate the value at a certain index from your array. You'll want to be careful with this one, because it modifies your array destructively. Once you call this method, you are changing your array permanently.
+
+**Deletes the element at the specified index, returning that element, or nil if the index is out of range.**
+
+### `delete(obj)`
+
+sometimes you will know the value that you want to delete, but not the index. In these situations you will want to use the delete method. The delete method permanently deletes all instances of the provided value from the array.
+
+Deletes all items from self that are equal to obj.
+
+Returns the last deleted item, or nil if no matching item is found.
