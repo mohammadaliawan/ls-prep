@@ -1055,7 +1055,19 @@ Arrays are what we call indexed lists. Each slot in an array has an idex number 
 
 All array indices start with the number 0.
 
+### `.first` method
+
+Returns the first element of an array.
+`first(n)` returns a new array of first n elements.
+
+### `.last` method
+
+Returns the last element of an array.
+`last(n)` returns a new array of the last n elements of an array
+
 ### `.pop` method
+
+`pop` removes the last element from self and returns it.
 
 you can use the `.pop`method to remove the last element of an array permanently and return it or `nil` is returned if the array is empty.
 
@@ -1066,8 +1078,10 @@ So this method does something but returns something else. There is a difference 
 
 ### `.push` method
 
-you can add an item permanently to an array using the `.push` method.
-Pushes the given objects on to the end of this array.This expression **returns the array itself, so several appends may be chained togather. e.g `array.push(5).push(6)`**
+push method pushes the given objects to the end of the array and returns the same array(so several appends maybe chained togather).
+
+this method **mutates the caller**.
+
 
 ### shovel operator `<<`
 
@@ -1087,9 +1101,8 @@ a
 
 iterates over an array applying a block to each element of the array and returns a new array with those results.
 
-Invokes the given block once for each element of self.
-
-Creates a new array containing the values returned by the block.
+**Invokes the given block once for each element of self.
+Creates a new array containing the values returned by the block.**
 
 ####`collect(enum)`
 
@@ -1112,3 +1125,64 @@ sometimes you will know the value that you want to delete, but not the index. In
 Deletes all items from self that are equal to obj.
 
 Returns the last deleted item, or nil if no matching item is found.
+
+### `uniq`
+The `uniq` method removes any duplicate values that exist in an array and returns the result as a new array. 
+The unique method doesnot modify the orignal array.
+
+BY adding the `!` bang operator you can perform the `uniq` method
+destructively.
+
+**uniq and uniq! are two different methods for Ruby Arrays.You cannot simply append a ! onto any method and achieve a destructive operation.**
+
+### `each`
+
+The `each` method iterates over an array and invokes a block once for each element of an array and passes that element as a parameter.
+
+### `select`
+
+This method iterates over an array and returns a new array that includes any elements that return `true` to the expression provided.
+
+**Returns a new array containing all elements of ary for which the given block returns a true value.**
+
+###  Methods with a !
+
+The bang operator (!) at the end of the method name usually indicates that the method will change (or mutate) the caller permanently. Unfortunately this is not always the case. It is a good rule to be wary of any method that has the bang operator and to make sure to check the Ruby documentation to see if it will behave destructively (the word "destructive" here just means mutating the caller).
+
+Also, please note that there are methods like pop and push that are destructive, but do not have a ! at the end. It's a little confusing in the beginning, but as you write more programs in Ruby, you'll start to get a feel for which methods are destructive and which are not.
+
+### `.unshift(obj)` => ary
+
+Prepends objects to the front of self, moving other elements upwards and returns the array.
+This method **mutates the caller**
+
+### `.include?`
+
+The `include?` method checks to see if the argument given is included in the array. It returns a boolean value.
+
+### `flatten(level)` => new_ary
+
+Returns a new array that is a one-dimensional flattening of self.
+
+That is, for every element that is an array, extract its elements into the new array.
+
+The optional level argument determines the level of recursion to flatten.
+
+level 1 means any array in the subject array will extract its elements into the new array.
+
+### `each_index`  => ary
+
+iterates through the array like the `each` method however instead of passing in the elements of the array, the index number is passed. 
+Returns the orgininal array.
+
+### `each_with_index` => ary
+
+passes in both the value and the index to the
+block of code. first is the value and second is the index.
+
+
+### `.sort` => new_ary
+
+Returns a sorted array. It is not destructive.That is, it **doesnot** mutate the caller.
+
+## `.each` for iteration and `.map` for transformation

@@ -4,10 +4,11 @@ puts "array Before: #{array}"
 
 original_array_id = array.object_id
 
-returned_array = array.push(10,11,12)
+returned_array = array.unshift("a", "b", "c")
+# returned_array = array.push(10,11,12)
 
-puts "array After: #{array}"
-puts "returned array     = #{returned_array}"
+puts "array After:    #{array}"
+puts "returned array: #{returned_array}"
 
 changed_array_id = array.object_id
 returned_array_id = returned_array.object_id
