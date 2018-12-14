@@ -1186,3 +1186,20 @@ block of code. first is the value and second is the index.
 Returns a sorted array. It is not destructive.That is, it **doesnot** mutate the caller.
 
 ## `.each` for iteration and `.map` for transformation
+
+## Hashes
+
+A hash is a data structure that stores items by associated keys. Arrays store items by an ordered index.
+Hashes have key-value pairs. This creates an associated representation of data.
+
+Usually hash is created using symbols as keys and any data type as values.
+
+>Ruby-Docs: A Hash is like a dictionary like collection of **unique** keys and their values. Also called associative arrays. Similar to arrays, but where Arrays use integers as its index, a Hash allows you to use **any object type** as the key.
+
+Hashes enumerate there values in the order that the corresponding keys are inserted.
+
+### Hash Creation Syntax
+
+Old Syntax for creation:  key-value pairs seperated by commas and surrounded by curly braces. The keys are usually symbols, but can be any type of object. 
+
+Implicit form of 
