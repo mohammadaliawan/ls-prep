@@ -1200,6 +1200,65 @@ Hashes enumerate there values in the order that the corresponding keys are inser
 
 ### Hash Creation Syntax
 
-Old Syntax for creation:  key-value pairs seperated by commas and surrounded by curly braces. The keys are usually symbols, but can be any type of object. 
+Key-value pairs seperated by commas and surrounded by curly braces. The keys are usually symbols, but can be any type of object. 
 
-Implicit form of 
+#### Creation through Implicit form of Hash:
+
+`hash = {}` This also creates a hash with `nil` as its default value. An empty hash is created.
+
+hash = { key => value, key => value}
+
+`grades = { "Ali" => 23, "Amna" => 25, "Yusuf" => 37, "Ibraheem" => 36}`
+
+alternate syntax for keys that are symbols:
+
+hash = { key: value, key: value}
+
+`grades = { ali: 23, amna: 25, yusuf: 34, ibraheem: 47}`
+
+**spcaes don't matter**
+
+Each named key is a symbol here that can be accessed in a hash:
+
+`grades[:ali] #=> 23`
+
+#### Creation using the ::new method
+
+`h = Hash.new`
+
+Hashes have a default value that is returned when accessing keys that donot exist in the hash. If no default is set, nil is used.
+Default value can be set by sending it as an argument to `.new`
+
+`h = Hash.new("default")`
+
+OR by using the `#default=` method:
+
+`grades= Hash.new`
+`grades.default = "No Marks"`
+
+### Public Class methods for Class Hash
+
+#### ::[] written as`Hash[key,value,key,value,key,value...]` -> new_hash
+
+Creates a new hash populated with the given objects.
+This form of hash creation is similar to the literal method 
+`{key = > value ...}`. 
+In this form keys and values occur in pairs, so there must be an even number of arguments. 
+
+It returns a new hash.
+
+**default value for non-existant keys is `nil`** 
+
+**`Hash[]` creates a new empty hash**
+
+##### `Hash[[[key,value],[key,value],...]]` OR `Hash[object]` -> new_hash
+
+In these forms a single argument is given which is either an array of key-value pairs (an array of arrays which are key-value pairs) or an object which is convertible to an array.
+
+Also returns a new hash.
+
+**default value for non-existant keys is `nil`**
+
+
+#### ::new 
+
