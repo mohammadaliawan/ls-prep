@@ -1192,9 +1192,9 @@ Returns a sorted array. It is not destructive.That is, it **doesnot** mutate the
 A hash is a data structure that stores items by associated keys. Arrays store items by an ordered index.
 Hashes have key-value pairs. This creates an associated representation of data.
 
-Usually hash is created using symbols as keys and any data type as values.
+Usually a hash is created using symbols as keys and any data type as values.
 
->Ruby-Docs: A Hash is like a dictionary like collection of **unique** keys and their values. Also called associative arrays. Similar to arrays, but where Arrays use integers as its index, a Hash allows you to use **any object type** as the key.
+>Ruby-Docs: A Hash is a dictionary like collection of **unique** keys and their values. Also called associative arrays. Similar to arrays, but where Arrays use integers as its index, a Hash allows you to use **any object type** as the key.
 
 Hashes enumerate there values in the order that the corresponding keys are inserted.
 
@@ -1253,12 +1253,53 @@ It returns a new hash.
 
 ##### `Hash[[[key,value],[key,value],...]]` OR `Hash[object]` -> new_hash
 
-In these forms a single argument is given which is either an array of key-value pairs (an array of arrays which are key-value pairs) or an object which is convertible to an array.
+In these forms a single argument is given which is either an array of key-value pairs (an array of arrays which are key-value pairs) or an object which is convertible to a hash.
 
 Also returns a new hash.
 
 **default value for non-existant keys is `nil`**
 
 
-#### ::new 
+#### ::new -> new_hash in all cases
 
+This method creates a new empty hash and returns it.
+If this hash is subsequently accessed by a key that doesn't correspond to a hash entry, the value returned depends on the style of new used to create the hash. 
+
+In this form `Hash.new -> new_hash` the access returns nil.
+In this form `Hash.new(obj)-> new_hash`, this single object will be used for all default values. The same object will be returned when any non-existent keys are accessed.
+
+### Public Instance Methods
+
+#### `#[]` Element Reference
+
+Retrieves the **value** object corresponding to the **key** object.
+
+**`hsh[key] -> value`**
+
+```
+irb(main):027:0> h = {"a"=> 1, "b"=> 2}
+=> {"a"=>1, "b"=>2}
+irb(main):028:0> h["a"]
+=> 1
+irb(main):029:0> h["c"]
+=> nil
+irb(main):030:0> h.default = "no such key"
+=> "no such key"
+irb(main):032:0> h["c"]
+=> "no such key"
+```
+
+#### `#[]=` Element Assignment
+
+**`hsh[key] = value`-> value**
+
+Associates value given by _value_ with the key given by _key_.
+
+#### `#delete` 
+
+**`hsh.delete(key)` -> value**
+
+Deletes the key-value pair and returns the value from hsh whose key is equal to _key_.
+If key is not found then returns nil.
+
+**this is a mutating method** as it modifies the original hash. Checked with Object_id.

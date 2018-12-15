@@ -264,4 +264,4 @@ Certain objects are immutable in Ruby e.g. numbers and booleans. They cannot be 
 
 Mutable objects however can be modified without creating new objects.
 
-Ruby is pass by value for immutable objects and pass by reference otherwise.
+**Ruby is pass by value for immutable objects and pass by reference otherwise.**
