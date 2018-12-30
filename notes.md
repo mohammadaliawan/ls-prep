@@ -1245,7 +1245,7 @@ This form of hash creation is similar to the literal method
 `{key = > value ...}`. 
 In this form keys and values occur in pairs, so there must be an even number of arguments. 
 
-It returns a new hash.
+**It returns a new hash.**
 
 **default value for non-existant keys is `nil`** 
 
@@ -1255,7 +1255,7 @@ It returns a new hash.
 
 In these forms a single argument is given which is either an array of key-value pairs (an array of arrays which are key-value pairs) or an object which is convertible to a hash.
 
-Also returns a new hash.
+**Also returns a new hash.**
 
 **default value for non-existant keys is `nil`**
 
@@ -1294,6 +1294,9 @@ irb(main):032:0> h["c"]
 **`hsh[key] = value`-> value**
 
 Associates value given by _value_ with the key given by _key_.
+Adds key-value pairs into an existing hash. So it is a mutating method.
+Checked with object_id
+
 
 #### `#delete` 
 
@@ -1303,3 +1306,266 @@ Deletes the key-value pair and returns the value from hsh whose key is equal to 
 If key is not found then returns nil.
 
 **this is a mutating method** as it modifies the original hash. Checked with Object_id.
+
+
+#### `#merge!`
+
+**`hsh.merge!(other_hash)` -> hsh**
+
+Adds the contents of other_hash to hsh and returns the modified original hash.
+
+**This method is destructive, meaning it mutates(modifies) the orignal hash. And also returns the original mutated hash as well.** Checked with Object_id.
+
+
+If no block is specified, entries with duplicate keys are overwritten with values from other_hash,
+otherwise the value of each duplicate key is determined by calling the block with the key,value_in_hsh, and value_in_other_hash.
+
+#### `#merge` 
+
+**`hsh.merge(other_hash)` -> new_hash**
+
+**Returns a new hash** containing the contents of other_hash and the contents of hsh. So it is a non-mutating method. Non-destructive, Does not modify the original hashes.
+
+If no block is specified, the value for entries with duplicate keys will be that of other_hash. Otherwise the value for each duplicate key is determined by calling the block with the key, its value in hsh and its value in other_hash.
+```
+irb(main):088:0> ali
+=> {:height=>"5' 7\"", :weight=>52, :age=>31, :hair=>"black"}
+irb(main):089:0> hsh_2
+=> {:age=>31, :height=>"5 ft 7in", :weight=>"52 kgs", :hair=>"black", :eyes=>"black"}
+irb(main):090:0> new_merged_hash
+=> {:height=>"5 ft 7in", :weight=>"52 kgs", :age=>31, :hair=>"black", :eyes=>"black"}
+```
+
+### Iterating over Hashes
+
+#### `#empty?`
+
+Returns _true_ if hash contains no key-value pairs.
+
+The `#each` method can be used to iterate over hashes.
+
+#### `#each` OR `each_pair` -> hsh
+
+**`hsh.each{ |key,value| block}` -> hsh**
+
+calls block once for each key in hsh, passing the key-value pair as parameters.
+
+### Hash Keys
+
+#### strings can be used as keys
+
+#### arrays can be used as keys
+
+#### integers/ floats can be used as keys
+
+#### hashes can also be used as keys.
+
+#### hashes can also be used as `values`
+```
+irb(main):002:0> hash = { key: {key1: "value"}}
+=> {:key=>{:key1=>"value"}}
+irb(main):003:0> hash[:key]
+=> {:key1=>"value"}
+irb(main):004:0> hash[:key][:key1]
+=> "value"
+```
+The "value" is retrieved by using `hash[:key][:key1]`
+which is basically `hash.[](:key).[](:key1)`
+
+### Common Hash Methods
+
+#### `#has_key?` -> true or false
+
+Returns true if the given key is present in hsh.
+Can also be used as `.key?(:key)`
+
+#### `#has_value?(value)` -> true or false
+
+Returns true if the given value is present for some key in hsh.
+Can also be used as `.value?(value)`
+
+#### `#select{|key,value| block}` -> a_hash
+
+**Ruby-docs> Returns a new hash consisting of entries for which the block returns true.**
+
+The Select method allows you to pass a block and will return any key-value pairs that evaluate to true when ran through the block.
+
+The original hash is not modified. And a new hash is returned that is different than the orignal hash(different object id). Checked with .object_id.
+
+The objects contained in the new_hash are the same objects as in the original hash. Meaning copies are not made. So modifying the objects in the new hash will also show the changes in the original hash. 
+
+```
+irb(main):007:0> h = {"a" => 100, "b" => 200, "c" => 300}
+=> {"a"=>100, "b"=>200, "c"=>300}
+irb(main):008:0> h_id = h.object_id
+=> 47377616224620
+irb(main):012:0> h_a_id = h.key(100).object_id
+=> 47377618722260
+irb(main):013:0> h_100_id = h["a"].object_id
+=> 201
+irb(main):014:0> new_hash = h.select{|key,value| value <= 100}
+=> {"a"=>100}
+irb(main):015:0> new_hash.object_id == h_id
+=> false
+irb(main):016:0> h_id == h.object_id
+=> true
+irb(main):017:0> h
+=> {"a"=>100, "b"=>200, "c"=>300}
+irb(main):018:0> h_a_id == new_hash.key(100).object_id
+=> true
+irb(main):019:0> h_100_id == new_hash["a"].object_id
+=> true
+
+Uptil Here it is evident that the objects contained in both the original hash and the new hash are the same.
+
+irb(main):020:0> new_hash["a"] = 150
+=> 150
+irb(main):021:0> h
+=> {"a"=>100, "b"=>200, "c"=>300}
+
+But assigning a new value to a key of the new hash does not assign the same value to the same key in the original hash. The original hash remains unmodified even though the key object is the same.
+
+irb(main):022:0> new_hash
+=> {"a"=>150}
+irb(main):023:0> h_a_id == new_hash.key(150).object_id
+=> true
+irb(main):025:0> h["a"]
+=> 100
+irb(main):026:0> new_hash["a"]
+=> 150
+
+irb(main):027:0> h.key(100).object_id == new_hash.key(150).object_id
+=> true
+
+
+Even after this the key object remains the same in both hashes but the value it points to is different in both hashes.
+```
+
+
+#### `#select!{|key,value| block}` -> hsh or nil
+
+This method works similarly to Hash#select method, but instead of returning a new hash, it modifies the original hash by keeping those key value pairs which when passed into the block return a true value. 
+
+It also returns the modified hash, which has the same object_id as the original hash, so we know that the original somehow modified hash is returned. Checked with object_id.
+
+The object id for the original hash also does not change. So we know that the original hash was modified.
+
+The objects inside the orignal hash are also not changed. Checked with Object_id.
+
+**`nil` is returned if no changes are made to the hash.**
+
+```
+irb(main):021:0> h
+=> {"a"=>100, "b"=>200, "c"=>300}
+irb(main):029:0> h.select!{|key,value| value <= 200}
+=> {"a"=>100, "b"=>200}
+irb(main):030:0> h
+=> {"a"=>100, "b"=>200}
+irb(main):031:0> h_id == h.object_id
+=> true
+irb(main):032:0> modified_hash = h.select!{|key,value| value <= 200}
+=> nil
+irb(main):033:0> modified_hash
+=> nil
+irb(main):034:0> modified_hash = h.select!{|key,value| value <= 100}
+=> {"a"=>100}
+irb(main):035:0> h
+=> {"a"=>100}
+irb(main):036:0> modified_hash
+=> {"a"=>100}
+irb(main):037:0> h_id == h.object_id
+=> true
+irb(main):038:0> h_a_id == h.key(100).object_id
+=> true
+irb(main):039:0> h_100_id == h["a"].object_id
+=> true
+irb(main):040:0> h_id == modified_hash.object_id
+=> true
+irb(main):041:0> h_a_id == modified_hash.key(100).object_id
+=> true
+irb(main):042:0> h_100_id == modified_hash["a"].object_id
+=> true
+```
+
+#### `#keep_if{|key,value| block}` -> hsh
+
+Keep key-value pair if the block returns true, delete key value pair if block returns false. 
+
+This is a **mutating method** as it modifies the original hash. Checked with Object_id. Line 52.
+
+The Retutned hash is also the original but modified hash. Line 64.
+
+Equivalent to `#select!` but where `select!` returns nil if no changes are made, this method returns the original hash without any changes
+
+
+```
+irb(main):046:0> h = {a: 100, b: 200, c: 300}
+=> {:a=>100, :b=>200, :c=>300}
+irb(main):047:0> h_id = h.object_id
+=> 47377618559160
+irb(main):048:0> h_a_id = h.key(100).object_id
+=> 754268
+irb(main):049:0> h_100_id = h[:a].object_id
+=> 201
+irb(main):050:0> h.keep_if{|key, value| value <= 200}
+=> {:a=>100, :b=>200}
+irb(main):051:0> h
+=> {:a=>100, :b=>200}
+irb(main):052:0> h_id == h.object_id
+=> true
+irb(main):053:0> h_a_id == h.key(100).object_id
+=> true
+irb(main):054:0> h_100_id == h[:a].object_id
+=> true
+irb(main):055:0> h.keep_if{|key, value| value <= 200}
+=> {:a=>100, :b=>200}
+irb(main):056:0> h
+=> {:a=>100, :b=>200}
+irb(main):057:0> h.select!{|key, value| value <= 200}
+=> nil
+irb(main):058:0> h
+=> {:a=>100, :b=>200}
+irb(main):059:0> h_id == h.object_id
+=> true
+irb(main):060:0> h_a_id == h.key(100).object_id
+=> true
+irb(main):061:0> h_100_id == h[:a].object_id
+=> true
+irb(main):062:0> changed_hash = h.keep_if{|key,value| value <= 100}
+=> {:a=>100}
+irb(main):063:0> h
+=> {:a=>100}
+irb(main):064:0> h_id == changed_hash.object_id
+=> true
+irb(main):065:0> h.key(100).object_id == changed_hash.key(100).object_id
+=> true
+irb(main):066:0> h[:a].object_id == changed_hash[:a].object_id
+=> true
+
+```
+
+
+#### `#fetch(key, default)` -> value or default or if default not specified then raises a KeyError
+
+Returns a value from the hash forthe given key. 
+
+If key is not found, and default is given then that will be returned, otherwise a KeyError will be raised.
+
+##### `#fetch(key){|key| block}` -> obj
+
+If the optional code block is specified then that will run and its result returned.
+
+#### `#to_a`-> array
+
+converts hsh to a nested array of [key,value] arrays.
+Does not permanently modify or mutate the hash. So its a non-mutating method.
+
+```
+irb(main):014:0> hsh.to_a
+=> [[:a, 100], [:b, 200], [:c, 300], [:d, "To be filled"], [:e, "To be Filled"]]
+irb(main):015:0> hsh
+=> {:a=>100, :b=>200, :c=>300, :d=>"To be filled", :e=>"To be Filled"}
+```
+#### `#keys` -> array
+
+Returns a new array populated with the keys from this hash.

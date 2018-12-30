@@ -162,7 +162,7 @@ Ruby Arrays are mutable. One easy way to modify elements of an array is using in
 
 Now it may seem that this is just reassignment, and it cannot modify an object. But, an array is a collection of references to other objects. Those objects might be immutable,such as numbers or mutable such as strings.
 
-But the array itself can be modified in two ways i.e. either modifying the references inside the array which can be done by indexed assignment or by modifying any immutable object, such as a string, that an element of the array references. Both ways mutate the array but in different ways. But both ways donot change the object_id of the array, which remains the same in both cases. 
+But the array itself can be modified in two ways i.e. either modifying the references inside the array which can be done by indexed assignment or by modifying any mutable object, such as a string, that an element of the array references. Both ways mutate the array but in different ways. But both ways donot change the object_id of the array, which remains the same in both cases. 
 
 ```
 irb(main):001:0> a = [1,2,3,"a"]
