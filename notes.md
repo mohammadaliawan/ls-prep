@@ -1374,7 +1374,7 @@ which is basically `hash.[](:key).[](:key1)`
 
 ### Common Hash Methods
 
-#### `#has_key?` -> true or false
+#### `#has_key?(key)` -> true or false
 
 Returns true if the given key is present in hsh.
 Can also be used as `.key?(:key)`
