@@ -10,5 +10,62 @@
 6. Revise Git Book
 7. Make Flash Cards for Git Book
 
-### Revise the Introduction to Programming Book
+## Revise the Introduction to Programming Book
 
+### The Basics
+
+- Read Basics Chapter and solve examples
+- Revise Notes
+- Read the Literals Page on Ruby Docs regarding strings, numbers and symbols
+- Make Flash Cards
+- Solve Exercises at the end of the Chapter
+- Learn Some new methods for Strings, Integers
+- Do Ruby Basics for Strings
+
+
+### Variables
+
+- Read Variables Chapter and Solve examples
+- Revise Notes
+- Read Variables References and Mutatbility of Ruby Objects
+- Read Assignment from Ruby Docs
+- Make Flash Cards
+- Solve Exercises at the end of the chapter
+- Solve Ruby Basics for Variable Scope
+- Solve Ruby Basics for Getting User Input
+
+### Methods
+
+- Read Methods Chapter and Solve examples
+- Revise Notes
+- Read Ruby's Mutating and Non Mutating Methods
+- Make Notes for Above
+- Make Flash Cards
+- Solve Exercises at the end of the chapter
+- Solve Ruby Basics for Methods
+- Solve Ruby Basics for Return
+
+### Flow Control
+
+- Read Flow Control Chapter and Solve examples
+- Revise Notes
+- Make Flash Cards
+- Solve Exercises at the end of the chapter
+- Solve Ruby Basics for Conditionals
+
+### Loops & Iterators
+
+- Read Loops Chapter and Solve examples
+- Revise Notes
+- Make Flash Cards
+- Solve Exercises at the end of the chapter
+- Solve Ruby Basics for Loops 1 and Loops 2
+
+### Arrays
+
+- Read Arrays Chapter and Solve Examples
+- Revise Notes
+- Make Flash Cards
+- Solve Exercises at the end of the chapter
+- Solve Exercises at the end of the Book
+- Solve Ruby Basics for Arrays
