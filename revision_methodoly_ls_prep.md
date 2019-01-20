@@ -5,6 +5,7 @@
 1. Revise the Introduction to Programming Book
 2. Make Flash Cards for Intro to Programming Book
 3. Solve Ruby Basics atleast 3 times before entering the Backend Course
+4. Solve Ruby Basics All of them One more time While Going through the below things
 4. Revise the Command Line Book
 5. Make Flash Cards for CMD Line Book
 6. Revise Git Book
@@ -32,7 +33,9 @@
 - Make Flash Cards
 - Solve Exercises at the end of the chapter
 - Solve Ruby Basics for Variable Scope
-- Solve Ruby Basics for Getting User Input
+- Solve Ruby Basics for Getting User Input\
+
+### Revise Hashes, Reading Docs, The Basics and Variables
 
 ### Methods
 
@@ -61,11 +64,31 @@
 - Solve Exercises at the end of the chapter
 - Solve Ruby Basics for Loops 1 and Loops 2
 
+### Revise Methods, Flow Control and Loop & Iterators
+
 ### Arrays
 
 - Read Arrays Chapter and Solve Examples
 - Revise Notes
+- Read Ruby Docs for Arrays
 - Make Flash Cards
 - Solve Exercises at the end of the chapter
 - Solve Exercises at the end of the Book
 - Solve Ruby Basics for Arrays
+
+### More Stuff
+
+- Read Chapter
+- Revise Notes
+- Make Flash Cards
+
+### Revise Loops, Arrays and More Stuff
+
+
+## Revise the CMD Book
+- Make Flash Cards
+
+## Revise the Git Book
+- Make Flash Cards
+
+
