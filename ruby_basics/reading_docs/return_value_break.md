@@ -1,0 +1,1 @@
+break sets the return value of the while loop to whatever value is supplied to break as an argument, and if no value is given then it returns nil.

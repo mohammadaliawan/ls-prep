@@ -3,11 +3,12 @@ contact_data = [["joe@email.com", "123 Main st.", "555-123-4567"],
 
 contacts = {"Joe Smith" => {}, "Sally Johnson" => {}}
 
-contacts["Joe Smith"][:email] = contact_data[0][0]
-contacts["Joe Smith"][:address] = contact_data[0][1]
-contacts["Joe Smith"][:mobile] = contact_data[0][2]
-contacts["Sally Johnson"][:email] = contact_data[1][0]
-contacts["Sally Johnson"][:address] = contact_data[1][1]
-contacts["Sally Johnson"][:mobile] = contact_data[1][2]
+contacts.each do |name, hash|
+  [:email, :address, :phone].each do |key|
+    hash[key] = contact_data.first.shift
+  end
+  contact_data.shift
+end
 
+p contact_data
 p contacts
