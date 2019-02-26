@@ -35,7 +35,7 @@
 - Solve Ruby Basics for Variable Scope
 - Solve Ruby Basics for Getting User Input\
 
-### Revise Hashes, Reading Docs, The Basics and Variables
+### Revise Reading Docs, The Basics and Variables
 
 ### Methods
 
@@ -76,13 +76,24 @@
 - Solve Exercises at the end of the Book
 - Solve Ruby Basics for Arrays
 
+### Hashes
+
+- Read Hashes Chapter and Solve Examples
+- Revise Notes
+- Read Ruby Docs for Hashes
+- Make Flash Cards
+- Solve Exercises at the end of the chapter
+- Solve Exercises at the end of the Book
+- Solve Ruby Basics for Hashes
+
+
 ### More Stuff
 
 - Read Chapter
 - Revise Notes
 - Make Flash Cards
 
-### Revise Loops, Arrays and More Stuff
+### Revise Arrays, Hashes and More Stuff
 
 
 ## Revise the CMD Book
