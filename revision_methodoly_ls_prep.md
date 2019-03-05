@@ -32,10 +32,7 @@
 - Read Assignment from Ruby Docs
 - Make Flash Cards
 - Solve Exercises at the end of the chapter
-- Solve Ruby Basics for Variable Scope
-- Solve Ruby Basics for Getting User Input\
 
-### Revise Reading Docs, The Basics and Variables
 
 ### Methods
 
@@ -45,8 +42,14 @@
 - Make Notes for Above
 - Make Flash Cards
 - Solve Exercises at the end of the chapter
+- Solve Ruby Basics for Variable Scope
+- Solve Ruby Basics for Getting User Input
 - Solve Ruby Basics for Methods
 - Solve Ruby Basics for Return
+
+### Revise Ruby Basics Reading Docs, Strings, Variable Scope, Methods, Return, User Input
+
+### Flashcards for Docs, Gems, General, Integers, Strings, Styling, Variables, Methods
 
 ### Flow Control
 
