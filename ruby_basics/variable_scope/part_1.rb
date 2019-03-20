@@ -7,16 +7,17 @@ end
 my_value(a)
 puts a
 
-"It will print 7. Because, 
-1. When a is passed as an argument to my_value
-b is also assigned to the integer referenced by
-a, that is, the integer 7. +=, which is a reass-
--ignment operator only reassigns b to the integer
-17. It does not change or mutate the value pointed to
-by a
+# This program prints 7 to the screen.
+# Why: 
+#. 1. When the method my_value is invoked and 'a' is passed in as an
+# argument, the pararmeter 'b', which is a local variable scope at the 
+# method definition level, references the same integer object as that 
+# pointed to by 'a' which is 7. The inside the mehtod definiton the local
+# variable 'b' is reassigned to the result of 'b + 10'. So 'b' now points
+# to the integer object 17. Since this is just reassignment of b, the 
+# value pointed to 'a' is not modfied in any way. So a still points to the 
+#integer object 7.
 
-2. The second reason is that numbers in Ruby 
-are immutable. Meaning they cannot be changed.
-Hence there is no way for my_value to change the value 
-pointed to by b, which means that it cannot change
-the value pointed to by a"
+# 2. Another reason is that numbers in Ruby are immutable objects. 
+# So there is no way for my_value to mutate the object pointed to 'b' hence 
+# it also cannot mutate the the object pointed to by 'a'.
