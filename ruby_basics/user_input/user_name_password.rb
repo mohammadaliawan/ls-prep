@@ -14,8 +14,10 @@ loop do
   user_name = gets.chomp
   puts ">> Enter Your Password: "
   password = gets.chomp
-  break if password == PASSWORD && user_name == USERNAME
-  puts "Authorization Failed!"
+  if password == PASSWORD && user_name == USERNAME
+    break
+  else
+    puts "Authorization Failed!"
 end
 
 puts "Welcome!"
