@@ -10,4 +10,3 @@ puts "#{first_method} #{second_method}"
 
 puts(first_method.+(" ").+(second_method))
 
-puts first_method.second_method
