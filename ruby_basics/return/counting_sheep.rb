@@ -14,4 +14,3 @@ puts count_sheep
 # 3
 # 4
 # 5
-
