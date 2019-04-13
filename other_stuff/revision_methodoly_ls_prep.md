@@ -13,39 +13,38 @@
 
 ## Revise the Introduction to Programming Book
 
-### The Basics
+### The Basics- DONE
 
-- Read Basics Chapter and solve examples
-- Revise Notes
-- Read the Literals Page on Ruby Docs regarding strings, numbers and symbols
-- Make Flash Cards
-- Solve Exercises at the end of the Chapter
-- Learn Some new methods for Strings, Integers
-- Do Ruby Basics for Strings
+- Read Basics Chapter and solve examples- DONE
+- Revise Notes- DONE
+- Read the Literals Page on Ruby Docs regarding strings, numbers and symbols- DONE
+- Make Flash Cards- DONE
+- Solve Exercises at the end of the Chapter- DONE
+- Learn Some new methods for Strings, Integers- DONE
+- Do Ruby Basics for Strings- DONE
+
+### Variables- DONE
+
+- Read Variables Chapter and Solve examples- DONE
+- Revise Notes- DONE
+- Read Variables References and Mutatbility of Ruby Objects- DONE
+- Read Assignment from Ruby Docs- DONE
+- Make Flash Cards- DONE
+- Solve Exercises at the end of the chapter- DONE
 
 
-### Variables
+### Methods- DONE
 
-- Read Variables Chapter and Solve examples
-- Revise Notes
-- Read Variables References and Mutatbility of Ruby Objects
-- Read Assignment from Ruby Docs
-- Make Flash Cards
-- Solve Exercises at the end of the chapter
-
-
-### Methods
-
-- Read Methods Chapter and Solve examples
-- Revise Notes
-- Read Ruby's Mutating and Non Mutating Methods
-- Make Notes for Above
-- Make Flash Cards
-- Solve Exercises at the end of the chapter
-- Solve Ruby Basics for Variable Scope
-- Solve Ruby Basics for Getting User Input
-- Solve Ruby Basics for Methods
-- Solve Ruby Basics for Return
+- Read Methods Chapter and Solve examples- DONE
+- Revise Notes- DONE
+- Read Ruby's Mutating and Non Mutating Methods- DONE
+- Make Notes for Above- DONE
+- Make Flash Cards- DONE
+- Solve Exercises at the end of the chapter- DONE
+- Solve Ruby Basics for Variable Scope- DONE
+- Solve Ruby Basics for Getting User Input- DONE
+- Solve Ruby Basics for Methods- DONE
+- Solve Ruby Basics for Return- DONE
 
 ### Revise Ruby Basics Reading Docs, Strings, Variable Scope, Methods, Return, User Input
 
@@ -53,18 +52,18 @@
 
 ### Flow Control
 
-- Read Flow Control Chapter and Solve examples
-- Revise Notes
-- Make Flash Cards
-- Solve Exercises at the end of the chapter
-- Solve Ruby Basics for Conditionals
+- Read Flow Control Chapter and Solve examples- DONE 
+- Revise Notes- DONE 
+- Make Flash Cards- DONE 
+- Solve Exercises at the end of the chapter- DONE
 
 ### Loops & Iterators
 
-- Read Loops Chapter and Solve examples
-- Revise Notes
-- Make Flash Cards
-- Solve Exercises at the end of the chapter
+- Read Loops Chapter and Solve examples- DONE
+- Revise Notes- DONE
+- Make Flash Cards- DONE
+- Solve Exercises at the end of the chapter- DONE
+- Solve Ruby Basics for Conditionals
 - Solve Ruby Basics for Loops 1 and Loops 2
 
 ### Revise Methods, Flow Control and Loop & Iterators
