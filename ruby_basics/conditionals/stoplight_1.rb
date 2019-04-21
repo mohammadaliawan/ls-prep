@@ -10,4 +10,3 @@ case stoplight
   else "red"
     puts "Stop!"
   end
-
