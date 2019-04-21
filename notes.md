@@ -1,4 +1,6 @@
-# Learning to Program-Chris Pine/Intro-to-Programming-LS/Codeacademy-ruby Track
+# These notes are not my own work and have been copied from various sources cited below. These are intended only for my own personal use.
+
+# Learning to Program-Chris Pine/Intro-to-Programming-LanuchSchool/Codeacademy-ruby Track
 
 **--------- LaunchSchool-Introduction to Programming------------**
 
