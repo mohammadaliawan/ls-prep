@@ -1051,9 +1051,17 @@ Recursion is another way to create a loop is ruby. Recursion is the act of calli
 ## Arrays
 
 An Array is an ordered list of elements that can be of any type.
-Arrays are what we call indexed lists. Each slot in an array has an idex number associated with it.You can reference any element of an array by its index number.
+Arrays are what we call indexed lists. Each slot in an array has an index number associated with it.You can reference any element of an array by its index number.
 
 `array[3]`
+
+**IMPORTANT: Mental Model for Arrays:** 
+
+`ary = [1,2,3]`
+
+The variable `ary` references the collection i.e the array and this collection contains references to actual objects.
+So, Basically Array elements are themselves references to objects. Element assignment `ary[1] = "a"` binds `ary[1]` to a new string; so we are modifying `ary` but not `ary[1]`
+
 
 All array indices start with the number 0.
 

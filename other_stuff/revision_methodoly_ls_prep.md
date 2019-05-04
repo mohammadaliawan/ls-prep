@@ -63,7 +63,7 @@
 - Revise Notes- DONE
 - Make Flash Cards- DONE
 - Solve Exercises at the end of the chapter- DONE
-- Solve Ruby Basics for Conditionals
+- Solve Ruby Basics for Conditionals-DONE
 - Solve Ruby Basics for Loops 1 and Loops 2- DONE
 
 ### Revise Methods, Flow Control and Loop & Iterators
