@@ -2,7 +2,7 @@
 
 ## Learning Something New
 
-1. Read the Material OR view video etc and follow the SCROL Method or PP123
+1. Read the Material OR view video etc and follow the SCRROL Method or PP123
 2. Makes Notes in Note Book Using Cornell Method. Only Keywords and Ideas. And Note any exercises relevant to the idea.
 3. Make Flashcards on Anki for all the ideas.
 4. Do any Exercises for that Topic/Quizes
