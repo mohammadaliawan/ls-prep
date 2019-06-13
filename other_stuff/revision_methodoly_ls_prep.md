@@ -7,9 +7,11 @@
   - Make Notes = Done
   - Make Flashcards = Done
   - Do End of Chapter Excercises = Done
-  - Recall Hashes Notes and practice examples.
-  - Do Hashes Exercises
-  - Do End of Book Arrays and Hashes Exercises
+  - Recall Hashes Notes and practice examples = Done
+  - Do Hashes Exercises = Done
+  - Do End of Book Arrays and Hashes Exercises = Done
+  - Do Ruby Basics for Hashes
+  - Do Ruby Basics for Arrays
   - Read More Stuff 
   - Make Flash Cards
   - Ruby Basics for Debugging
@@ -25,6 +27,3 @@
 ### 5. Revise Github Book 2 hours/ day
   - Do All Exercises
   - Make Flash Cards
-
-
-
