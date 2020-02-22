@@ -1,16 +1,9 @@
-print "Give me a 4 digit number: "
-num = gets.chomp.to_i
+num = 1234
 
-remainder_by1000 = num%1000
-remainder_by100 = remainder_by1000%100
+puts thousands = num / 1000
 
-thousands = num/1000
-hundreds = remainder_by1000/100
-tens = remainder_by100/10
-ones = num%10
+puts hundreds = (num % 1000) / 100
 
-puts "#{thousands} at thousands place"
-puts "#{hundreds} at the hundereds place"
-puts "#{tens} at the tens place"
-puts "#{ones} at the ones place"
+puts tens = (num % 100) / 10
 
+puts ones = num % 10

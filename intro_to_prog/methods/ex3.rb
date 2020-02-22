@@ -1,5 +1,5 @@
-def multiply(a,b)
-  a*b
+def multiply(num1, num2)
+  num1*num2
 end
 
-puts multiply(3,4)
+puts multiply(2,3)
