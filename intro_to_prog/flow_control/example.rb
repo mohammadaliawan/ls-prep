@@ -1,6 +1,8 @@
-a = false
+a = nil
+
 if a
-  puts "how can this be true?"
+  puts "how can this be true"
 else
-  puts "it is not true"
+  puts "it is not true."
 end
+
