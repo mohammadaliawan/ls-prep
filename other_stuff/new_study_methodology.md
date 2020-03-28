@@ -18,6 +18,7 @@
 - Review the three day's before topics in the same way as before
 - Review 7 days before Topic.
 - Review 20 days before Topic.
+- Do Code excercises if any.
 
 ### Types of concepts and how to practice:
 
