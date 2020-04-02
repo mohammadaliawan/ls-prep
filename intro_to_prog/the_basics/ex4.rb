@@ -1,19 +1,9 @@
-movies = {
-  harrypotter1: 2004,
-  harrypotter2: 2005,
-  harrypotter3: 2007,
-  harrypotter4: 2009,
-  harrypotter5: 2010,
-  harrypotter6: 2011,
-  harrypotter7: 2012
-}
+movies_hsh = {
+  harrypotter1: 1975,
+  harrypotter2: 2004,
+  harrypotter3: 2013,
+  harrypotter4: 2001}
 
-movies_array = []
-i = 0
+ary = [1975, 2004, 2013, 2001]
 
-movies.each{|moviename,year|
-  movies_array[i] = movies[moviename]
-  i += 1
-}
-
-movies_array.each{|year| puts year}
+puts ary

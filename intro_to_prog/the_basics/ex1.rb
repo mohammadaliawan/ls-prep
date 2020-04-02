@@ -1,4 +1,9 @@
-first_name = "Mohammad"
-last_name = "Ali"
+#we need two strings
 
-puts first_name + " " + last_name
+"Mohammad"
+"Ali"
+
+#add the two strings and return first_name
+#and last_name as full name in one string
+
+"Mohammad" + " Ali"

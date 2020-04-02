@@ -1,7 +1,10 @@
 puts "How old are you?"
 age = gets.chomp.to_i
 
-[10,20,30,40].each do |years|
-  puts "In #{years} years, you will be:\n#{age + years}"
-end
+puts "In 10 years you will be \n#{age + 10}"
 
+puts "In 20 years you will be \n#{age + 20}"
+
+puts "In 30 years you will be \n#{age + 30}"
+
+puts "In 40 years you will be \n#{age + 40}"

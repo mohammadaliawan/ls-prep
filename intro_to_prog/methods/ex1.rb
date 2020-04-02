@@ -1,5 +1,9 @@
 def greeting(name)
-  return "Hello! #{name}"
+  "Hello, #{name}"
 end
 
-puts greeting("Ali")
+puts "What is your name?"
+
+name = gets.chomp
+
+puts greeting(name)

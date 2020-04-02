@@ -1,10 +1,11 @@
-a =[1,2,3]
+a = [1,2,3]
 
-def no_mutate(array)
-  # array.pop
-  array.last
+def mutate(array)
+  array.pop
 end
 
-p "before no_mutate method: #{a}"
-no_mutate(a)
-p "After no_mutate method: #{a}"
+p "Before mutate method: #{a}"
+
+p mutate(a)
+
+p "After mutate method: #{a}"

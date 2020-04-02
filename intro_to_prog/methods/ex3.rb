@@ -2,4 +2,4 @@ def multiply(num1, num2)
   num1*num2
 end
 
-puts multiply(2,3)
+p multiply(2,3)

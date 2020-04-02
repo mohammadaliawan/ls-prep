@@ -1,9 +1,11 @@
-num = 1234
+number = 
 
-puts thousands = num / 1000
+thousands_place = number / 1000
 
-puts hundreds = (num % 1000) / 100
+hundreds_place = (number % 1000) / 100
 
-puts tens = (num % 100) / 10
+tens_place = (number % 100) / 10
 
-puts ones = num % 10
+ones_place = number % 10
+
+puts thousands_place, hundreds_place, tens_place, ones_place
