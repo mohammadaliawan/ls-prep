@@ -1,12 +1,12 @@
-def a_method(str)
-# if str length > 10, return new string that is all caps versionof str
+def all_caps(str)
   if str.length > 10
     str.upcase
   else
-    "\"#{str}\" length is less than 10"
+    "The string '#{str}' is less than 11 characters."
   end
 end
 
-puts a_method("hello")
+str = "hello world"
 
-#test "hello world" => "HELLO WORLD"
+p all_caps(str)
+

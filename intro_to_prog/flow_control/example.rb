@@ -1,8 +1,5 @@
-a = nil
-
-if a
-  puts "how can this be true"
-else
-  puts "it is not true."
+if x == 3
+  puts "x is 3"
 end
+
 
