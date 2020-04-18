@@ -1,7 +1,7 @@
-a = 0
+i = 0
 
 loop do
-  a += 2
-  puts a
-  break if a == 10r
+  i += 2
+  puts i
+  break if i == 10
 end

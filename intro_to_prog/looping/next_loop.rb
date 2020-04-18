@@ -1,18 +1,10 @@
 i = 0
 
-# loop do
-#   i += 2
-#   puts i unless i == 4
-#   break if i == 10
-# end
+return_value = loop do
+                 i += 2
+                 next if i == 4
+                 puts i
+                 break "End of Loop" if i == 10
+               end
 
-loop do
-  i += 2
-  if i == 4
-    next
-  end
-  puts i
-  if i == 10
-    break
-  end
-end
+p return_value

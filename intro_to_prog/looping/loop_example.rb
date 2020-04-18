@@ -1,3 +1,4 @@
 loop do
-  p "this will keep printing until you press ctrl + c"
+  puts "This will keep printing until you hit Ctrl+C"
 end
+

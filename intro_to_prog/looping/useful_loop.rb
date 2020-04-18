@@ -2,6 +2,8 @@ i = 0
 
 loop do
   i += 1
-  p i
-  break i
+  puts i
+  break
 end
+
+puts "Now we are out of the loop"
