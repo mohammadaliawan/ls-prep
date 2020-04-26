@@ -8,4 +8,12 @@ def countdown(number)
   end
 end
 
-puts countdown(-3)
+puts countdown(10)
+# def counter(number)
+#   puts number
+#   if number > 0
+#     counter(number - 1)
+#   end
+# end
+
+# countdown(5)

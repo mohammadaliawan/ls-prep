@@ -1,5 +1,7 @@
 # 0,1,1,2,3,5,8,13,21,34,55...
 
+# calculate the nth number in the fibonnaci sequence.
+
 def fibonacci(number)
   if number < 2
     number
@@ -8,6 +10,5 @@ def fibonacci(number)
   end
 end
 
-puts fibonacci(10)
-
+puts fibonacci(5)
 
