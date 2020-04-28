@@ -17,4 +17,3 @@ loop do
 end
 
 puts "Welcome!"
-
