@@ -1,9 +1,7 @@
-arr = [1,3,5,7,9,11]
-
+arr = [1, 5, 7, 9, 11]
 number = 3
 
-if arr.include?(number)
-  p "number is in the array"
-else
-  p "number is not in the array"
-end
+puts "The number #{number} appears in the array #{arr}" if arr.include?(number)
+
+puts "The number #{number} does not appear in the array #{arr}" unless arr.include?(number)
+
