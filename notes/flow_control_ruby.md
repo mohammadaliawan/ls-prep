@@ -34,7 +34,7 @@ The first condition that matches is executed.
 
 ## What is the return value of an if expression?
 
-The result value of an if expression is the last value executed in the expression.
+Returns the evaluated result of the branch whose condition evaluates to true, or nil if there is no such branch
 
 ## How is modifier if and unless written?
 
