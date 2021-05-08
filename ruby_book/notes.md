@@ -4,7 +4,7 @@
 
 ### What are Literals?
 
-A literal is any notation that lets you represent a fixed value is source code.
+A literal is any notation that lets you represent a fixed value in source code.
 
 ```ruby
 "Hello World" # String Literal
@@ -81,19 +81,22 @@ Try to work exclusively with positive integers if you can. Both operations will 
 
 THe `#divmod` method returns an array containing the integer result of division an its modulo value.
 
-
-
-
-
-
-### Type Conversions
-
-
-### Arrays
-
-### Hashes
-
-
 ### Expressions and Return
 
+An expression is anything that can be evaluated. Almost everything you right in ruby is an expression.
+
+Ruby expressions always return a value even if that value is `nil` or an error.
+
 ### `puts` vs. `return`
+
+**Expression do something, but they also return something** The value returned is not neccessarily the action that was performed. 
+
+For example: 
+```ruby
+irb(main):007:0> puts "Hello World"
+Hello World
+=> nil
+```
+`#puts` outputs whatever is passed to it as an argument, but it always returns `nil`. 
+
+However `#p` returns and outputs the argument that is passed to it.
