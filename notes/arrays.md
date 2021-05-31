@@ -54,9 +54,9 @@ Mutating Method.
 
 ## How to add an element(s) to the end of an array?
 
-array.push(obj,...) -> ary itself, appends, pushes the given obj(s) to the end of this array.
+array.push(obj,...) => ary itself, appends, pushes the given obj(s) to the end of this array.
 
-Array# << -> ary itself, appends the given obj to the end of the array, several appends can be chained togather.
+Array# << => ary itself, appends the given obj to the end of the array, several appends can be chained togather.
 
 Mutating Methods
 
@@ -213,3 +213,7 @@ Difference lies in how the new element's value is chosen.
 Array#map returns a new array with each element of the original array transformed based on the return value of the block.
 
 Array#select returns a new array containing only those elements from the original array for which the block returns true.
+
+The main difference between #map and #select is the way the new element's value is chosen. #map returns a new array with each element transformed based on the block's return value.
+
+#select returns a new array containing elements selected only if the block's return value evaluates to true.
