@@ -7,7 +7,7 @@ Hash Entries are called key-value pairs.
 
 A dictionary like collection of unique keys and their values.
 
-## What kind of objects an be used as key?
+## What kind of objects can be used as key?
 
 Any type of object can be used as keys.
 
